@@ -1,0 +1,132 @@
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020937.29 MB
+Memory reported by /proc/meminfo MemAvailable: 15368.36 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Bundling 6%
+Bundling 18%
+Bundling 58%
+Bundling 65%
+Bundling 71%
+Bundling 76%
+Bundling 81%
+Bundling 87%
+Bundling 92%
+Bundling 98%
+Bundling 100%
+Getting composition
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020430.54 MB
+Memory reported by /proc/meminfo MemAvailable: 14889.08 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Composition          OceanDrain
+Codec                h264
+Output               out/ocean-drain.mp4
+Concurrency          3x
+Rendered 0/2040
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020405.32 MB
+Memory reported by /proc/meminfo MemAvailable: 14831.04 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020398.77 MB
+Memory reported by /proc/meminfo MemAvailable: 14826.84 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020398.43 MB
+Memory reported by /proc/meminfo MemAvailable: 14826.67 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+[Tab 0, node_modules/three/build/three.core.js:2022] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 1, node_modules/three/build/three.core.js:2022] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[Tab 2, node_modules/three/build/three.core.js:2022] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+Rendered 1/2040, time remaining: 2h 37m 0s
+Rendered 2/2040, time remaining: 1h 18m 29s
+Rendered 3/2040, time remaining: 54m 16s
+Rendered 4/2040, time remaining: 47m 48s
+Rendered 5/2040, time remaining: 42m 26s
+Rendered 6/2040, time remaining: 36m 6s
+Rendered 7/2040, time remaining: 32m 24s
+Rendered 8/2040, time remaining: 32m 1s
+Rendered 9/2040, time remaining: 28m 59s
+Rendered 10/2040, time remaining: 27m 0s
+Rendered 11/2040, time remaining: 25m 38s
+Rendered 12/2040, time remaining: 25m 34s
+Rendered 13/2040, time remaining: 23m 50s
+Rendered 14/2040, time remaining: 22m 49s
+Rendered 15/2040, time remaining: 23m 14s
+Rendered 16/2040, time remaining: 21m 55s
+Rendered 17/2040, time remaining: 21m 3s
+Rendered 18/2040, time remaining: 20m 38s
+Rendered 19/2040, time remaining: 21m 23s
+Rendered 20/2040, time remaining: 20m 31s
+Rendered 21/2040, time remaining: 19m 43s
+Rendered 22/2040, time remaining: 20m 20s
+Rendered 23/2040, time remaining: 20m 1s
+Rendered 24/2040, time remaining: 19m 11s
+Rendered 25/2040, time remaining: 18m 58s
+Rendered 26/2040, time remaining: 19m 16s
+Rendered 27/2040, time remaining: 18m 39s
+Rendered 28/2040, time remaining: 18m 24s
+Rendered 29/2040, time remaining: 18m 42s
+Rendered 30/2040, time remaining: 18m 4s
+Rendered 31/2040, time remaining: 17m 52s
+Rendered 32/2040, time remaining: 18m 14s
+Rendered 33/2040, time remaining: 17m 45s
+Rendered 34/2040, time remaining: 17m 25s
+Rendered 35/2040, time remaining: 17m 23s
+Rendered 36/2040, time remaining: 17m 55s
+Rendered 37/2040, time remaining: 17m 33s
+Rendered 38/2040, time remaining: 17m 12s
+Rendered 39/2040, time remaining: 17m 8s
+Rendered 40/2040, time remaining: 17m 39s
+Rendered 41/2040, time remaining: 17m 20s
+Rendered 42/2040, time remaining: 17m 2s
+Rendered 43/2040, time remaining: 17m 2s
+Rendered 44/2040, time remaining: 17m 25s
+Rendered 45/2040, time remaining: 17m 1s
+Rendered 46/2040, time remaining: 16m 51s
+Rendered 47/2040, time remaining: 17m 2s
+Rendered 48/2040, time remaining: 16m 47s
+Rendered 49/2040, time remaining: 16m 41s
+Rendered 50/2040, time remaining: 16m 36s
+Rendered 50/2040, time remaining: 16m 36s
+Rendered 51/2040, time remaining: 16m 49s
+Rendered 51/2040, time remaining: 16m 49s
+Rendered 51/2040, time remaining: 16m 49s
+Rendered 52/2040, time remaining: 16m 55s
+Rendered 53/2040, time remaining: 16m 39s
+Rendered 54/2040, time remaining: 16m 33s
+Rendered 54/2040, time remaining: 16m 33s
+Rendered 54/2040, time remaining: 16m 33s
+Rendered 54/2040, time remaining: 16m 33s
+Rendered 55/2040, time remaining: 16m 53s
+Rendered 56/2040, time remaining: 16m 35s
+Rendered 57/2040, time remaining: 16m 20s
+Rendered 57/2040, time remaining: 16m 20s
+Rendered 57/2040, time remaining: 16m 20s
+Rendered 58/2040, time remaining: 16m 39s
+Rendered 59/2040, time remaining: 16m 21s
+Rendered 59/2040, time remaining: 16m 21s
+Rendered 60/2040, time remaining: 16m 17s
+Rendered 60/2040, time remaining: 16m 17s
+Rendered 60/2040, time remaining: 16m 17s
+Rendered 61/2040, time remaining: 16m 32s
+Rendered 62/2040, time remaining: 16m 16s
+Rendered 63/2040, time remaining: 16m 11s
+Rendered 63/2040, time remaining: 16m 11s
+Rendered 63/2040, time remaining: 16m 11s
+Rendered 64/2040, time remaining: 16m 23s
+Rendered 65/2040, time remaining: 16m 10s
+Rendered 65/2040, time remaining: 16m 10s
+Rendered 65/2040, time remaining: 16m 10s
+Rendered 65/2040, time remaining: 16m 10s
+Rendered 66/2040, time remaining: 16m 33s
+Rendered 67/2040, time remaining: 16m 25s
+Rendered 68/2040, time remaining: 16m 10s
+Rendered 68/2040, time remaining: 16m 10s
+Rendered 69/2040, time remaining: 16m 12s
+Rendered 69/2040, time remaining: 16m 12s

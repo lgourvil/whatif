@@ -1,0 +1,219 @@
+{
+ "fps": 30,
+ "total": 2040,
+ "movements": [
+  {
+   "id": 1,
+   "name": "Pier at dawn",
+   "start": 0,
+   "end": 240
+  },
+  {
+   "id": 2,
+   "name": "The sea breathes out",
+   "start": 240,
+   "end": 480
+  },
+  {
+   "id": 3,
+   "name": "Down the ladder, onto the seabed",
+   "start": 480,
+   "end": 780
+  },
+  {
+   "id": 4,
+   "name": "Walking the seabed",
+   "start": 780,
+   "end": 1140
+  },
+  {
+   "id": 5,
+   "name": "The wall \u2014 turn and run",
+   "start": 1140,
+   "end": 1500
+  },
+  {
+   "id": 6,
+   "name": "Impact and underwater",
+   "start": 1500,
+   "end": 1860
+  },
+  {
+   "id": 7,
+   "name": "Surface and rewind to pier",
+   "start": 1860,
+   "end": 2040
+  }
+ ],
+ "drain": {
+  "start": 150,
+  "end": 900
+ },
+ "wall": {
+  "appear": 1020,
+  "hit": 1500
+ },
+ "tension": [
+  [
+   0,
+   0.05
+  ],
+  [
+   240,
+   0.12
+  ],
+  [
+   600,
+   0.3
+  ],
+  [
+   900,
+   0.45
+  ],
+  [
+   1100,
+   0.6
+  ],
+  [
+   1260,
+   0.85
+  ],
+  [
+   1500,
+   1.0
+  ],
+  [
+   1560,
+   0.7
+  ],
+  [
+   1750,
+   0.25
+  ],
+  [
+   1860,
+   0.1
+  ],
+  [
+   2040,
+   0.05
+  ]
+ ],
+ "walk": [
+  {
+   "from": 600,
+   "to": 1230,
+   "cadence": 16,
+   "amp": 0.06
+  },
+  {
+   "from": 1230,
+   "to": 1500,
+   "cadence": 10,
+   "amp": 0.14
+  }
+ ],
+ "impacts": [
+  {
+   "frame": 1500,
+   "strength": 1.0
+  },
+  {
+   "frame": 1546,
+   "strength": 0.4
+  },
+  {
+   "frame": 1834,
+   "strength": 0.25
+  }
+ ],
+ "texts": [
+  {
+   "from": 0,
+   "to": 90,
+   "main": "THE OCEAN IS LEAVING",
+   "sub": "Minute 1",
+   "hook": true
+  },
+  {
+   "from": 90,
+   "to": 240,
+   "main": "MINUTE 1",
+   "sub": "it just... pulled back"
+  },
+  {
+   "from": 240,
+   "to": 480,
+   "main": "MINUTE 2",
+   "sub": "the pilings are showing"
+  },
+  {
+   "from": 480,
+   "to": 780,
+   "main": "MINUTE 4",
+   "sub": "nobody is stopping me"
+  },
+  {
+   "from": 780,
+   "to": 960,
+   "main": "MINUTE 7",
+   "sub": "fish. everywhere."
+  },
+  {
+   "from": 960,
+   "to": 1140,
+   "main": "MINUTE 8",
+   "sub": "the gulls left first"
+  },
+  {
+   "from": 1140,
+   "to": 1260,
+   "main": "MINUTE 9",
+   "sub": "that line on the horizon..."
+  },
+  {
+   "from": 1260,
+   "to": 1500,
+   "main": "RUN.",
+   "sub": "Minute 9.5"
+  },
+  {
+   "from": 1500,
+   "to": 1620,
+   "main": "MINUTE 10",
+   "sub": ""
+  },
+  {
+   "from": 1620,
+   "to": 1800,
+   "main": "0.0s",
+   "sub": "hold your breath"
+  },
+  {
+   "from": 1800,
+   "to": 1950,
+   "main": "MINUTE 1",
+   "sub": "the sea is back. calm."
+  },
+  {
+   "from": 1950,
+   "to": 2040,
+   "main": "THE OCEAN IS LEAVING",
+   "sub": "Minute 1",
+   "hook": true
+  }
+ ],
+ "ladder": {
+  "from": 520,
+  "to": 650
+ },
+ "pip": {
+  "enter": 840,
+  "pass": 960,
+  "exit": 1100
+ },
+ "underwater": {
+  "from": 1510,
+  "to": 1858
+ }
+}
