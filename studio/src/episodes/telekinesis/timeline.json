@@ -1,0 +1,47 @@
+{
+  "slug": "telekinesis",
+  "fps": 30,
+  "durationInFrames": 2250,
+  "movements": [
+    {"id": "m1-hook", "start": 0, "end": 150, "label": "Day 1 - hands out, pebble does nothing"},
+    {"id": "m2-timelapse", "start": 150, "end": 480, "label": "Days fly by in the same frame, the pebble wakes up"},
+    {"id": "m3-garden", "start": 480, "end": 840, "label": "Head turns: the whole garden floats, Moss at the fence"},
+    {"id": "m4-liftoff", "start": 840, "end": 1170, "label": "Look down at your feet: you lift yourself"},
+    {"id": "m5-town", "start": 1170, "end": 1530, "label": "Above town, a ring of boulders and cars orbits you"},
+    {"id": "m6-moon", "start": 1530, "end": 1860, "label": "Night: you reach for the moon and it comes closer"},
+    {"id": "m7-letgo", "start": 1860, "end": 2100, "label": "Let go gently, everything settles, dawn, descend home"},
+    {"id": "m8-student", "start": 2100, "end": 2250, "label": "Year 10: a kid's Day 1 - loops to frame 0"}
+  ],
+  "texts": [
+    {"from": 0, "to": 150, "stamp": "DAY 1", "line": "What if you practiced\ntelekinesis every day?", "hook": true, "y": 0.155},
+    {"from": 150, "to": 235, "stamp": "DAY 2", "line": "Nothing. Obviously."},
+    {"from": 235, "to": 330, "stamp": "DAY 9", "line": "...did it just shiver?"},
+    {"from": 330, "to": 420, "stamp": "DAY 23", "line": "IT. MOVED."},
+    {"from": 420, "to": 480, "stamp": "DAY 41", "line": "Okay. This is real."},
+    {"from": 480, "to": 660, "stamp": "DAY 88", "line": "The whole garden listens now."},
+    {"from": 660, "to": 840, "stamp": "DAY 150", "line": "Moss is NOT okay."},
+    {"from": 840, "to": 1000, "stamp": "DAY 365", "line": "Turns out I'm liftable too."},
+    {"from": 1000, "to": 1170, "stamp": "DAY 500", "line": "Commute: vertical."},
+    {"from": 1170, "to": 1350, "stamp": "YEAR 3", "line": "Rush hour is optional now."},
+    {"from": 1350, "to": 1530, "stamp": "YEAR 5", "line": "I can feel every stone in town."},
+    {"from": 1530, "to": 1700, "stamp": "YEAR 7", "line": "How far does it go?"},
+    {"from": 1700, "to": 1860, "stamp": "YEAR 7", "line": "Wait. That's the MOON.", "accent": "#ff6b4a"},
+    {"from": 1860, "to": 2010, "stamp": "LET GO.", "line": "Gently. Gently.", "accent": "#bfe6ff"},
+    {"from": 2010, "to": 2140, "stamp": "YEAR 10", "line": "Hardest trick:\nputting it all back."},
+    {"from": 2140, "to": 2205, "stamp": "YEAR 10", "line": "Your turn, kid."},
+    {"from": 2205, "to": 2250, "stamp": "DAY 1", "line": "What if you practiced\ntelekinesis every day?", "hook": true, "y": 0.155}
+  ],
+  "impacts": [
+    {"frame": 330, "strength": 0.35},
+    {"frame": 900, "strength": 1.0},
+    {"frame": 1240, "strength": 0.55},
+    {"frame": 1620, "strength": 0.7},
+    {"frame": 1740, "strength": 0.9},
+    {"frame": 1805, "strength": 1.0},
+    {"frame": 2072, "strength": 0.5}
+  ],
+  "whooshes": [480, 560, 700, 845, 1170, 1530, 1860, 1960, 2100, 2180],
+  "heartbeat": [[0, 64], [300, 80], [840, 95], [1500, 88], [1700, 130], [1840, 150], [1960, 80], [2250, 64]],
+  "tension": [[0, 0.05], [200, 0.12], [330, 0.32], [420, 0.15], [700, 0.22], [880, 0.4], [1100, 0.25], [1450, 0.3], [1620, 0.6], [1840, 1.0], [1900, 0.5], [2000, 0.15], [2250, 0.05]],
+  "power": [[0, 0.15], [150, 0.2], [330, 0.45], [480, 0.55], [840, 0.7], [1170, 0.65], [1530, 0.7], [1840, 1.0], [1960, 0.4], [2100, 0.15], [2250, 0.15]]
+}
