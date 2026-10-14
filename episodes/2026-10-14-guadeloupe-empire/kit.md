@@ -108,3 +108,10 @@ Fondus continus entre toutes les couches, compresseur RMS puis loudnorm 2 passes
 
 - Bannière impériale, motifs madras, personnages : créations originales (aucun drapeau officiel ni personne réelle). Lieux réels uniquement nommés.
 - Ton : conquête bon enfant (confettis, colombo, conque), pas de violence.
+
+## 8. Livraison
+
+- Doc du kit : https://claude.ai/code/artifact/797e4715-2dd3-423b-b21f-f26864654fd8
+- Vidéo (page de lecture, encodage de prévisualisation 13,6 Mo) : https://claude.ai/artifact/VYsCB5KA3n28hHitDUr2sN
+- Master CRF 16 (91 Mo) : envoyé en fichier dans la session (release GitHub impossible : jeton `gh` invalide dans le sandbox).
+- Vérif ffprobe : 80,0 s · 1080x1920 · 30 fps · yuv420p · piste AAC présente · −14,0 LUFS. Première et dernière image identiques (boucle).
