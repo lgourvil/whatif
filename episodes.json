@@ -1,0 +1,15 @@
+{
+  "episodes": [
+    {
+      "date": "2026-10-14",
+      "slug": "ocean-leaves",
+      "title": "The Ocean Left Tonight",
+      "scenario": "What if the ocean left tonight?",
+      "theme": "nature / physical absurdity",
+      "timeScale": "accelerating: Second 1 -> Minute -> Hour -> Day 1-30 -> decimal seconds 0.0s-9.9s -> Second 1 (loop)",
+      "durationSeconds": 72,
+      "characters": ["Marlo"],
+      "kit": "episodes/2026-10-14-ocean-leaves/kit.md"
+    }
+  ]
+}
