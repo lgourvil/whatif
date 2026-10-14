@@ -113,5 +113,5 @@ Fondus continus entre toutes les couches, compresseur RMS puis loudnorm 2 passes
 
 - Doc du kit : https://claude.ai/code/artifact/797e4715-2dd3-423b-b21f-f26864654fd8
 - Vidéo (page de lecture, encodage de prévisualisation 13,6 Mo) : https://claude.ai/artifact/VYsCB5KA3n28hHitDUr2sN
-- Master CRF 16 (91 Mo) : envoyé en fichier dans la session (release GitHub impossible : jeton `gh` invalide dans le sandbox).
+- MP4 prêt à publier (2,6 Mb/s, 27,7 Mo) : envoyé en fichier dans la session. Le master CRF 16 (91 Mo) dépasse la limite d'envoi de 30 Mo et la release GitHub est impossible (jeton `gh` invalide dans le sandbox) ; il se régénère avec la commande de rendu du README.
 - Vérif ffprobe : 80,0 s · 1080x1920 · 30 fps · yuv420p · piste AAC présente · −14,0 LUFS. Première et dernière image identiques (boucle).
