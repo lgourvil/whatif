@@ -1,0 +1,46 @@
+{
+  "slug": "guadeloupe-empire",
+  "fps": 30,
+  "durationInFrames": 2400,
+  "movements": [
+    { "id": "M1-hook-beach", "start": 0, "end": 120 },
+    { "id": "M2-walk-board", "start": 120, "end": 420 },
+    { "id": "M3-archipelago", "start": 420, "end": 780 },
+    { "id": "M4-night-dominica", "start": 780, "end": 1200 },
+    { "id": "M5-armada", "start": 1200, "end": 1600 },
+    { "id": "M6-rise-globe", "start": 1600, "end": 1920 },
+    { "id": "M7-collapse", "start": 1920, "end": 2220 },
+    { "id": "M8-dive-loop", "start": 2220, "end": 2400 }
+  ],
+  "texts": [
+    { "frame": 0, "end": 150, "stamp": "DAY 1", "line": "What if Guadeloupe built an EMPIRE?" },
+    { "frame": 150, "end": 420, "stamp": "DAY 1", "line": "6 boats. 1 flag. 0 plan." },
+    { "frame": 470, "end": 620, "stamp": "DAY 2", "line": "Marie-Galante joins. (They're cousins anyway.)" },
+    { "frame": 620, "end": 790, "stamp": "DAY 4", "line": "Les Saintes. La Désirade. The whole archipelago." },
+    { "frame": 790, "end": 1010, "stamp": "WEEK 3", "line": "Dominica signs. Over a pot of colombo." },
+    { "frame": 1010, "end": 1220, "stamp": "MONTH 4", "line": "Martinique. Still arguing who's better." },
+    { "frame": 1220, "end": 1420, "stamp": "YEAR 2", "line": "The entire Caribbean." },
+    { "frame": 1420, "end": 1620, "stamp": "YEAR 9", "line": "Miami. They came for the beaches." },
+    { "frame": 1620, "end": 1760, "stamp": "YEAR 30", "line": "Paris. Return to sender." },
+    { "frame": 1760, "end": 1940, "stamp": "YEAR 50", "line": "HALF. THE. PLANET." },
+    { "frame": 1940, "end": 2090, "stamp": "YEAR 51", "line": "Everyone wants independence." },
+    { "frame": 2090, "end": 2250, "stamp": "YEAR 52", "line": "Fine. We keep Marie-Galante." },
+    { "frame": 2250, "end": 2370, "stamp": "YEAR 53", "line": "...so, Day 1 again?" },
+    { "frame": 2370, "end": 2400, "stamp": "DAY 1", "line": "What if Guadeloupe built an EMPIRE?" }
+  ],
+  "impacts": [
+    { "frame": 268, "kind": "board", "strength": 0.6 },
+    { "frame": 560, "kind": "flag", "strength": 0.4 },
+    { "frame": 700, "kind": "flag", "strength": 0.4 },
+    { "frame": 900, "kind": "firework", "strength": 0.7 },
+    { "frame": 1100, "kind": "flag", "strength": 0.5 },
+    { "frame": 1230, "kind": "horn", "strength": 0.8 },
+    { "frame": 1430, "kind": "flag", "strength": 0.7 },
+    { "frame": 1700, "kind": "whiteout", "strength": 1.0 },
+    { "frame": 1800, "kind": "climax", "strength": 1.0 },
+    { "frame": 1950, "kind": "crack", "strength": 0.8 },
+    { "frame": 2240, "kind": "whiteout", "strength": 1.0 }
+  ],
+  "tension": [[0,0.15],[120,0.2],[420,0.3],[780,0.4],[1200,0.6],[1600,0.8],[1800,1.0],[1950,0.7],[2200,0.4],[2380,0.15],[2400,0.15]],
+  "steps": [[120,268],[2290,2330]]
+}

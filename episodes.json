@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-10-14",
+    "slug": "guadeloupe-empire",
+    "title": "What if Guadeloupe built an empire?",
+    "theme": "society / alternate history (comedy)",
+    "timeScale": "accelerating: Day 1 → Week 3 → Month 4 → Year 50 → Day 1",
+    "durationSeconds": 80,
+    "composition": "GuadeloupeEmpire",
+    "kit": "episodes/2026-10-14-guadeloupe-empire/kit.md",
+    "doc": "https://claude.ai/code/artifact/797e4715-2dd3-423b-b21f-f26864654fd8",
+    "video": "https://claude.ai/artifact/VYsCB5KA3n28hHitDUr2sN",
+    "requestedBy": "Louis (sujet imposé)",
+    "videoNote": "preview encode on the artifact page; 2.6 Mb/s upload copy (27.7 MB) delivered as a session file; CRF16 master (91 MB) too large to deliver — GitHub release not possible (gh token invalid)"
+  }
+]
