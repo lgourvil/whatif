@@ -1,0 +1,293 @@
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093020477.61 MB
+Memory reported by /proc/meminfo MemAvailable: 15151.86 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Bundling 6%
+Bundling 19%
+Bundling 29%
+Bundling 56%
+Bundling 65%
+Bundling 71%
+Bundling 76%
+Bundling 81%
+Bundling 87%
+Bundling 92%
+Bundling 98%
+Bundling 100%
+Getting composition
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093019813.76 MB
+Memory reported by /proc/meminfo MemAvailable: 14464.12 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Composition          OceanLeaves
+Codec                h264
+Output               out/ocean-leaves.mp4
+Concurrency          3x
+Rendered 0/2160
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093019781.89 MB
+Memory reported by /proc/meminfo MemAvailable: 14410.31 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093019781.73 MB
+Memory reported by /proc/meminfo MemAvailable: 14410.14 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Detected differing memory amounts:
+Memory reported by CGroup: 8796093019781.40 MB
+Memory reported by /proc/meminfo MemAvailable: 14410.18 MB
+You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
+Using the lower amount of memory for calculation.
+Rendered 1/2160, time remaining: 4h 37m 21s
+Rendered 2/2160, time remaining: 2h 18m 42s
+Rendered 3/2160, time remaining: 1h 32m 32s
+Rendered 4/2160, time remaining: 1h 29m 55s
+Rendered 5/2160, time remaining: 1h 11m 55s
+Rendered 6/2160, time remaining: 59m 54s
+Rendered 7/2160, time remaining: 55m 54s
+Rendered 8/2160, time remaining: 58m 8s
+Rendered 9/2160, time remaining: 51m 50s
+Rendered 10/2160, time remaining: 46m 54s
+Rendered 10/2160, time remaining: 46m 54s
+Rendered 10/2160, time remaining: 46m 54s
+Rendered 10/2160, time remaining: 46m 54s
+Rendered 11/2160, time remaining: 47m 26s
+Rendered 12/2160, time remaining: 43m 38s
+Rendered 12/2160, time remaining: 43m 38s
+Rendered 13/2160, time remaining: 42m 8s
+Rendered 13/2160, time remaining: 42m 8s
+Rendered 14/2160, time remaining: 40m 46s
+Rendered 14/2160, time remaining: 40m 46s
+Rendered 14/2160, time remaining: 40m 46s
+Rendered 15/2160, time remaining: 39m 35s
+Rendered 15/2160, time remaining: 39m 35s
+Rendered 15/2160, time remaining: 39m 35s
+Rendered 15/2160, time remaining: 39m 35s
+Rendered 16/2160, time remaining: 40m 26s
+Rendered 17/2160, time remaining: 38m 5s
+Rendered 17/2160, time remaining: 38m 5s
+Rendered 18/2160, time remaining: 37m 8s
+Rendered 18/2160, time remaining: 37m 8s
+Rendered 18/2160, time remaining: 37m 8s
+Rendered 18/2160, time remaining: 37m 8s
+Rendered 19/2160, time remaining: 37m 36s
+Rendered 20/2160, time remaining: 35m 43s
+Rendered 20/2160, time remaining: 35m 43s
+Rendered 21/2160, time remaining: 35m 3s
+Rendered 21/2160, time remaining: 35m 3s
+Rendered 21/2160, time remaining: 35m 3s
+Rendered 22/2160, time remaining: 35m 28s
+Rendered 23/2160, time remaining: 33m 59s
+Rendered 23/2160, time remaining: 33m 59s
+Rendered 23/2160, time remaining: 33m 59s
+Rendered 24/2160, time remaining: 33m 30s
+Rendered 24/2160, time remaining: 33m 30s
+Rendered 24/2160, time remaining: 33m 30s
+Rendered 25/2160, time remaining: 33m 59s
+Rendered 25/2160, time remaining: 33m 59s
+Rendered 26/2160, time remaining: 32m 51s
+Rendered 26/2160, time remaining: 32m 51s
+Rendered 27/2160, time remaining: 32m 26s
+Rendered 27/2160, time remaining: 32m 26s
+Rendered 27/2160, time remaining: 32m 26s
+Rendered 27/2160, time remaining: 32m 26s
+Rendered 28/2160, time remaining: 33m 4s
+Rendered 29/2160, time remaining: 32m 2s
+Rendered 29/2160, time remaining: 32m 2s
+Rendered 30/2160, time remaining: 31m 39s
+Rendered 30/2160, time remaining: 31m 39s
+Rendered 30/2160, time remaining: 31m 39s
+Rendered 30/2160, time remaining: 31m 39s
+Rendered 31/2160, time remaining: 32m 13s
+Rendered 32/2160, time remaining: 31m 12s
+Rendered 32/2160, time remaining: 31m 12s
+Rendered 33/2160, time remaining: 30m 57s
+Rendered 33/2160, time remaining: 30m 57s
+Rendered 33/2160, time remaining: 30m 57s
+Rendered 33/2160, time remaining: 30m 57s
+Rendered 34/2160, time remaining: 31m 27s
+Rendered 35/2160, time remaining: 30m 33s
+Rendered 35/2160, time remaining: 30m 33s
+Rendered 35/2160, time remaining: 30m 33s
+Rendered 35/2160, time remaining: 30m 33s
+Rendered 35/2160, time remaining: 30m 33s
+Rendered 36/2160, time remaining: 31m 39s
+Rendered 37/2160, time remaining: 30m 51s
+Rendered 38/2160, time remaining: 30m 2s
+Rendered 38/2160, time remaining: 30m 2s
+Rendered 38/2160, time remaining: 30m 2s
+Rendered 39/2160, time remaining: 30m 6s
+Rendered 39/2160, time remaining: 30m 6s
+Rendered 39/2160, time remaining: 30m 6s
+Rendered 40/2160, time remaining: 30m 25s
+Rendered 41/2160, time remaining: 29m 42s
+Rendered 41/2160, time remaining: 29m 42s
+Rendered 41/2160, time remaining: 29m 42s
+Rendered 42/2160, time remaining: 29m 31s
+Rendered 42/2160, time remaining: 29m 31s
+Rendered 43/2160, time remaining: 29m 21s
+Rendered 43/2160, time remaining: 29m 21s
+Rendered 44/2160, time remaining: 29m 12s
+Rendered 44/2160, time remaining: 29m 12s
+Rendered 44/2160, time remaining: 29m 12s
+Rendered 44/2160, time remaining: 29m 12s
+Rendered 45/2160, time remaining: 29m 35s
+Rendered 46/2160, time remaining: 29m 0s
+Rendered 46/2160, time remaining: 29m 0s
+Rendered 46/2160, time remaining: 29m 0s
+Rendered 47/2160, time remaining: 28m 52s
+Rendered 47/2160, time remaining: 28m 52s
+Rendered 47/2160, time remaining: 28m 52s
+Rendered 47/2160, time remaining: 28m 52s
+Rendered 48/2160, time remaining: 29m 25s
+Rendered 49/2160, time remaining: 28m 51s
+Rendered 49/2160, time remaining: 28m 51s
+Rendered 49/2160, time remaining: 28m 51s
+Rendered 50/2160, time remaining: 28m 52s
+Rendered 50/2160, time remaining: 28m 52s
+Rendered 50/2160, time remaining: 28m 52s
+Rendered 51/2160, time remaining: 29m 17s
+Rendered 52/2160, time remaining: 28m 43s
+Rendered 52/2160, time remaining: 28m 43s
+Rendered 52/2160, time remaining: 28m 43s
+Rendered 53/2160, time remaining: 28m 34s
+Rendered 53/2160, time remaining: 28m 34s
+Rendered 53/2160, time remaining: 28m 34s
+Rendered 53/2160, time remaining: 28m 34s
+Rendered 54/2160, time remaining: 29m 1s
+Rendered 55/2160, time remaining: 28m 29s
+Rendered 55/2160, time remaining: 28m 29s
+Rendered 56/2160, time remaining: 28m 24s
+Rendered 56/2160, time remaining: 28m 24s
+Rendered 56/2160, time remaining: 28m 24s
+Rendered 56/2160, time remaining: 28m 24s
+Rendered 57/2160, time remaining: 28m 38s
+Rendered 58/2160, time remaining: 28m 12s
+Rendered 58/2160, time remaining: 28m 12s
+Rendered 58/2160, time remaining: 28m 12s
+Rendered 59/2160, time remaining: 28m 17s
+Rendered 59/2160, time remaining: 28m 17s
+Rendered 59/2160, time remaining: 28m 17s
+Rendered 59/2160, time remaining: 28m 17s
+Rendered 60/2160, time remaining: 28m 46s
+Rendered 61/2160, time remaining: 28m 19s
+Rendered 61/2160, time remaining: 28m 19s
+Rendered 61/2160, time remaining: 28m 19s
+Rendered 62/2160, time remaining: 28m 26s
+Rendered 62/2160, time remaining: 28m 26s
+Rendered 62/2160, time remaining: 28m 26s
+Rendered 62/2160, time remaining: 28m 26s
+Rendered 62/2160, time remaining: 28m 26s
+Rendered 63/2160, time remaining: 28m 54s
+Rendered 64/2160, time remaining: 28m 26s
+Rendered 64/2160, time remaining: 28m 26s
+Rendered 64/2160, time remaining: 28m 26s
+Rendered 64/2160, time remaining: 28m 26s
+Rendered 64/2160, time remaining: 28m 26s
+Rendered 65/2160, time remaining: 29m 14s
+Rendered 65/2160, time remaining: 29m 14s
+Rendered 66/2160, time remaining: 28m 50s
+Rendered 67/2160, time remaining: 28m 25s
+Rendered 67/2160, time remaining: 28m 25s
+Rendered 67/2160, time remaining: 28m 25s
+Rendered 68/2160, time remaining: 28m 37s
+Rendered 68/2160, time remaining: 28m 37s
+Rendered 68/2160, time remaining: 28m 37s
+Rendered 68/2160, time remaining: 28m 37s
+Rendered 68/2160, time remaining: 28m 37s
+Rendered 69/2160, time remaining: 29m 8s
+Rendered 70/2160, time remaining: 28m 44s
+Rendered 70/2160, time remaining: 28m 44s
+Rendered 70/2160, time remaining: 28m 44s
+Rendered 71/2160, time remaining: 28m 48s
+Rendered 71/2160, time remaining: 28m 48s
+Rendered 71/2160, time remaining: 28m 48s
+Rendered 71/2160, time remaining: 28m 48s
+Rendered 72/2160, time remaining: 29m 14s
+Rendered 73/2160, time remaining: 28m 49s
+Rendered 73/2160, time remaining: 28m 49s
+Rendered 73/2160, time remaining: 28m 49s
+Rendered 74/2160, time remaining: 28m 53s
+Rendered 74/2160, time remaining: 28m 53s
+Rendered 74/2160, time remaining: 28m 53s
+Rendered 74/2160, time remaining: 28m 53s
+Rendered 75/2160, time remaining: 29m 11s
+Rendered 76/2160, time remaining: 28m 47s
+Rendered 76/2160, time remaining: 28m 47s
+Rendered 76/2160, time remaining: 28m 47s
+Rendered 77/2160, time remaining: 28m 49s
+Rendered 77/2160, time remaining: 28m 49s
+Rendered 77/2160, time remaining: 28m 49s
+Rendered 77/2160, time remaining: 28m 49s
+Rendered 77/2160, time remaining: 28m 49s
+Rendered 78/2160, time remaining: 29m 11s
+Rendered 79/2160, time remaining: 28m 48s
+Rendered 79/2160, time remaining: 28m 48s
+Rendered 80/2160, time remaining: 28m 49s
+Rendered 80/2160, time remaining: 28m 49s
+Rendered 80/2160, time remaining: 28m 49s
+Rendered 80/2160, time remaining: 28m 49s
+Rendered 80/2160, time remaining: 28m 49s
+Rendered 81/2160, time remaining: 29m 10s
+Rendered 82/2160, time remaining: 28m 48s
+Rendered 82/2160, time remaining: 28m 48s
+Rendered 83/2160, time remaining: 28m 47s
+Rendered 83/2160, time remaining: 28m 47s
+Rendered 83/2160, time remaining: 28m 47s
+Rendered 83/2160, time remaining: 28m 47s
+Rendered 84/2160, time remaining: 29m 2s
+Rendered 85/2160, time remaining: 28m 40s
+Rendered 85/2160, time remaining: 28m 40s
+Rendered 85/2160, time remaining: 28m 40s
+Rendered 86/2160, time remaining: 28m 42s
+Rendered 86/2160, time remaining: 28m 42s
+Rendered 86/2160, time remaining: 28m 42s
+Rendered 86/2160, time remaining: 28m 42s
+Rendered 87/2160, time remaining: 28m 57s
+Rendered 88/2160, time remaining: 28m 39s
+Rendered 88/2160, time remaining: 28m 39s
+Rendered 88/2160, time remaining: 28m 39s
+Rendered 89/2160, time remaining: 28m 41s
+Rendered 89/2160, time remaining: 28m 41s
+Rendered 89/2160, time remaining: 28m 41s
+Rendered 89/2160, time remaining: 28m 41s
+Rendered 90/2160, time remaining: 28m 55s
+Rendered 91/2160, time remaining: 28m 35s
+Rendered 91/2160, time remaining: 28m 35s
+Rendered 91/2160, time remaining: 28m 35s
+Rendered 92/2160, time remaining: 28m 37s
+Rendered 92/2160, time remaining: 28m 37s
+Rendered 92/2160, time remaining: 28m 37s
+Rendered 92/2160, time remaining: 28m 37s
+Rendered 93/2160, time remaining: 28m 54s
+Rendered 94/2160, time remaining: 28m 35s
+Rendered 94/2160, time remaining: 28m 35s
+Rendered 94/2160, time remaining: 28m 35s
+Rendered 95/2160, time remaining: 28m 36s
+Rendered 95/2160, time remaining: 28m 36s
+Rendered 95/2160, time remaining: 28m 36s
+Rendered 95/2160, time remaining: 28m 36s
+Rendered 96/2160, time remaining: 28m 51s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 97/2160, time remaining: 28m 33s
+Rendered 98/2160, time remaining: 28m 59s
+Rendered 99/2160, time remaining: 28m 45s
+Rendered 100/2160, time remaining: 28m 27s
+Rendered 100/2160, time remaining: 28m 27s
+Rendered 100/2160, time remaining: 28m 27s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 101/2160, time remaining: 28m 34s
+Rendered 102/2160, time remaining: 29m 2s
+Rendered 103/2160, time remaining: 28m 44s
+Rendered 104/2160, time remaining: 28m 27s

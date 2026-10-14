@@ -1,0 +1,5 @@
+node_modules/
+studio/out/
+*.mp4
+studio/public/audio/*.wav
+__pycache__/
