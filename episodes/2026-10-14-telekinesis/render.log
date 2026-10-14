@@ -1,0 +1,11 @@
+render: npx remotion render WhatIf-2026-10-14-Telekinesis out/telekinesis.mp4 --gl=angle --codec=h264 --crf=16 --x264-preset=slow --pixel-format=yuv420p --color-space=bt709 --concurrency=3 --timeout=120000
+2250 frames, ~45 min on 4 vCPU (swiftshader/angle), ~1.1 s/frame
+Getting composition
+Composition          WhatIf-2026-10-14-Telekinesis
+Codec                h264
+Output               out/telekinesis.mp4
+Concurrency          3x
++                    out/telekinesis.mp4 113.3 MB
+exit 0
+ffprobe: h264 1080x1920 30fps, aac 48kHz stereo, duration 75.008s, 113.3 MB
+loop check: mean abs diff frame 0 vs 2249 = 3.77/255

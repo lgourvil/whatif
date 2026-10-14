@@ -1,0 +1,15 @@
+[
+  {
+    "date": "2026-10-14",
+    "slug": "telekinesis",
+    "title": "What if you practiced telekinesis every day?",
+    "theme": "human body / superpowers",
+    "timeScale": "accelerating: Day 1 -> Day 500 -> Year 10",
+    "timeScaleUnit": "days-to-years",
+    "durationSeconds": 75,
+    "composition": "WhatIf-2026-10-14-Telekinesis",
+    "characters": ["Moss", "Pip"],
+    "kit": "episodes/2026-10-14-telekinesis/kit.md",
+    "doc": "https://claude.ai/code/artifact/87df3ebb-e368-4059-a8e7-c91c4adc03db"
+  }
+]
