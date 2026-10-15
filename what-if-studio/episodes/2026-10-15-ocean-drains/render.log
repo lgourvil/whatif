@@ -1,0 +1,19 @@
+Bundling 6%
+Bundling 12%
+Bundling 62%
+Bundling 69%
+Bundling 74%
+Bundling 80%
+Bundling 85%
+Bundling 90%
+Bundling 95%
+Bundling 100%
+Copying public dir 14.4 MB
+Getting compositions
+Getting compositions
+Composition          ocean-drains
+Codec                h264
+Output               out/ocean-drains.mp4
+Concurrency          3x
++                    out/ocean-drains.mp4 96.1 MB
+ffprobe: 1080x1920 30fps 75.05s, audio 48kHz stereo; MP4 96.1 MB (kept out of git)

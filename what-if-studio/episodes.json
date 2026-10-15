@@ -1,0 +1,7 @@
+[
+  {"date": "2026-10-13", "slug": "ocean-drain", "title": "What if the ocean drained away in 10 minutes?", "theme": "nature / physics", "branch": "claude/brave-clarke-x1h1iq"},
+  {"date": "2026-10-14", "slug": "ocean-leaves", "title": "What if the ocean left tonight?", "theme": "nature / physical absurdity", "branch": "claude/brave-clarke-ltj4nh"},
+  {"date": "2026-10-14", "slug": "guadeloupe-empire", "title": "What if Guadeloupe built an empire?", "theme": "society / alternate history", "branch": "episode/2026-10-14-guadeloupe-empire"},
+  {"date": "2026-10-14", "slug": "telekinesis", "title": "What if you practiced telekinesis every day?", "theme": "human body / superpowers", "branch": "episode/2026-10-14-telekinesis"},
+  {"date": "2026-10-15", "slug": "ocean-drains", "title": "What if the ocean left… and came back?", "theme": "nature / space", "branch": "claude/brave-clarke-si7bps", "note": "DUPLICATE of the two ocean episodes above — do not repeat"}
+]
