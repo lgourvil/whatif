@@ -1,0 +1,41 @@
+{
+  "fps": 30,
+  "durationInFrames": 2250,
+  "movements": [
+    {"id": 1, "start": 0,    "end": 240,  "label": "Minute 1", "desc": "Standing on the beach at sunset, looking at your hands, the sea is leaving"},
+    {"id": 2, "start": 240,  "end": 690,  "label": "Minute 7", "desc": "Walking down the exposed seabed with Pip, stranded boats and fish"},
+    {"id": 3, "start": 690,  "end": 1110, "label": "Hour 1",   "desc": "Time-lapse: dusk to night while you descend toward a sunken city"},
+    {"id": 4, "start": 1110, "end": 1440, "label": "Hour 6",   "desc": "Ruins at the edge of the last water, you look up: the Moon is huge (dolly zoom)"},
+    {"id": 5, "start": 1440, "end": 1620, "label": "Hour 9",   "desc": "Horizon glows red, a wall of water, whip-pan to run"},
+    {"id": 6, "start": 1620, "end": 1990, "label": "Hour 9",   "desc": "Sprint back up the slope, glance over your shoulder, the wave closes in"},
+    {"id": 7, "start": 1990, "end": 2100, "label": "Hour 10",  "desc": "Impact and white-out, light fade"},
+    {"id": 8, "start": 2100, "end": 2250, "label": "Minute 1", "desc": "Same beach, same sunset, same frame as the start (loop)"}
+  ],
+  "labels": [
+    {"frame": 0,    "text": "Minute 1", "static": true},
+    {"frame": 300,  "text": "Minute 7"},
+    {"frame": 750,  "text": "Hour 1"},
+    {"frame": 1200, "text": "Hour 6"},
+    {"frame": 1560, "text": "Hour 9"},
+    {"frame": 1900, "text": "Hour 10"},
+    {"frame": 2100, "text": "Minute 1", "static": true}
+  ],
+  "captions": [
+    {"frame": 0,    "end": 130,  "text": "POV: the ocean is leaving", "static": true},
+    {"frame": 330,  "end": 480,  "text": "the fish don't know yet"},
+    {"frame": 560,  "end": 700,  "text": "nobody is coming"},
+    {"frame": 790,  "end": 940,  "text": "you found the old city"},
+    {"frame": 1230, "end": 1420, "text": "the Moon is closer. much closer."},
+    {"frame": 1570, "end": 1700, "text": "it's giving it back"},
+    {"frame": 1730, "end": 1900, "text": "RUN"},
+    {"frame": 2160, "end": 2250, "text": "POV: the ocean is leaving", "static": true}
+  ],
+  "impacts": [{"frame": 1962, "amp": 1.0}, {"frame": 1295, "amp": 0.5}, {"frame": 1540, "amp": 0.35}],
+  "tension": [[0,0.1],[300,0.15],[750,0.3],[1200,0.5],[1300,0.7],[1500,0.85],[1960,1.0],[2000,0.5],[2060,0.1],[2250,0.1]],
+  "sfx": [
+    {"frame": 1295, "type": "boom"},
+    {"frame": 1540, "type": "rumble"},
+    {"frame": 1585, "type": "whoosh"},
+    {"frame": 1962, "type": "crash"}
+  ]
+}
