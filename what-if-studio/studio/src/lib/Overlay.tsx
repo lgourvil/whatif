@@ -33,9 +33,9 @@ export const PostFx: React.FC<{shock: number; children: React.ReactNode}> = ({sh
   );
 };
 
-type OverlayProps = {frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number};
+type OverlayProps = {frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number; dark?: number};
 
-export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension}) => {
+export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, dark = 0}) => {
   const {fps, width, height} = useVideoConfig();
   const label = [...labels].reverse().find((l) => frame >= l.frame) ?? labels[0];
   const cap = captions.find((c) => frame >= c.frame && frame < c.end);
@@ -73,6 +73,7 @@ export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash,
           </div>
         )}
       </div>
+      <AbsoluteFill style={{background: '#000', opacity: dark}} />
       <AbsoluteFill style={{background: '#fff', opacity: flash}} />
     </AbsoluteFill>
   );

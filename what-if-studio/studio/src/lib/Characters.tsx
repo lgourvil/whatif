@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ShadowCtx} from './ShadowCast';
 import * as THREE from 'three';
 import {outlineMaterial, toonProps} from './ToonMaterial';
 
@@ -11,17 +12,26 @@ type OProps = {
   thickness?: number;
   shadow?: boolean;
   emissive?: THREE.ColorRepresentation;
+  outline?: boolean;
 };
 
 /** Toon mesh + inverted-hull outline (duplicate mesh, BackSide, slightly larger, black). */
-export const Outlined: React.FC<OProps> = ({geometry, color, position, rotation, scale = 1, thickness = 0.06, shadow = true, emissive}) => {
+export const Outlined: React.FC<OProps> = ({geometry, color, position, rotation, scale = 1, thickness = 0.06, shadow = true, emissive, outline = true}) => {
+  const sc = useContext(ShadowCtx);
   const s: [number, number, number] = typeof scale === 'number' ? [scale, scale, scale] : scale;
+  if (sc) {
+    return (
+      <group position={position} rotation={rotation} scale={s}>
+        <mesh geometry={geometry}><meshBasicMaterial color={sc.color} polygonOffset polygonOffsetFactor={-2} polygonOffsetUnits={-2} /></mesh>
+      </group>
+    );
+  }
   return (
     <group position={position} rotation={rotation} scale={s}>
       <mesh geometry={geometry} castShadow={shadow}>
         <meshToonMaterial {...toonProps(color)} emissive={emissive ?? '#000000'} />
       </mesh>
-      <mesh geometry={geometry} material={outlineMaterial()} scale={1 + thickness} />
+      {outline && <mesh geometry={geometry} material={outlineMaterial()} scale={1 + thickness} />}
     </group>
   );
 };

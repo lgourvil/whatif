@@ -21,3 +21,10 @@ export const OCEAN_DRAINS: Palette[] = [
   {zenith: '#050a26', horizon: '#2b4c8f', ground: '#e6c28c', water: '#2a8fa0', accent: '#7ef0ff'},
   {zenith: '#1e0509', horizon: '#e0222c', ground: '#e6c28c', water: '#2a8fa0', accent: '#ff3b30'},
 ];
+
+/** Shadows at Noon: noon blue -> dusk orange -> night; accent gold is "the light" that keeps the shadows away. */
+export const SHADOWS_NOON: Palette[] = [
+  {zenith: '#2d7ff0', horizon: '#c8e8ff', ground: '#ead9b0', water: '#e07a5f', accent: '#ffd23f'},
+  {zenith: '#4b2a7a', horizon: '#ff8f45', ground: '#ead9b0', water: '#b84a5a', accent: '#ffd23f'},
+  {zenith: '#05030c', horizon: '#2a0b1c', ground: '#ead9b0', water: '#2a2140', accent: '#ffd23f'},
+];

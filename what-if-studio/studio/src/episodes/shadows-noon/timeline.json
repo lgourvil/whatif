@@ -1,0 +1,46 @@
+{
+  "fps": 30,
+  "durationInFrames": 2000,
+  "movements": [
+    {"id": 1, "start": 0,    "end": 150,  "label": "12:00", "desc": "Noon, empty plaza, you look down: your shadow waves at you"},
+    {"id": 2, "start": 150,  "end": 360,  "label": "12:03", "desc": "Your shadow stands up and walks away, every other shadow swings round to point at you"},
+    {"id": 3, "start": 360,  "end": 600,  "label": "12:07", "desc": "You follow it to the fountain; the frozen passers-by lose their shadows"},
+    {"id": 4, "start": 600,  "end": 900,  "label": "12:15", "desc": "360 whip-pan: dozens of shadows peel off the ground; a column of light falls on you"},
+    {"id": 5, "start": 900,  "end": 1200, "label": "14:00", "desc": "Time-lapse: the sun races overhead, the ring of shadows orbits you like a sundial"},
+    {"id": 6, "start": 1200, "end": 1560, "label": "19:00", "desc": "Sunset: the circle of light shrinks, shadows stretch to giants"},
+    {"id": 7, "start": 1560, "end": 1760, "label": "23:59", "desc": "Last light, you turn around: your own shadow is right behind you; white-out and black"},
+    {"id": 8, "start": 1850, "end": 2000, "label": "12:00", "desc": "Noon again, same frame as the start: your shadow waves (loop)"}
+  ],
+  "labels": [
+    {"frame": 0,    "text": "12:00", "static": true},
+    {"frame": 150,  "text": "12:03"},
+    {"frame": 360,  "text": "12:07"},
+    {"frame": 600,  "text": "12:15"},
+    {"frame": 900,  "text": "14:00"},
+    {"frame": 1200, "text": "19:00"},
+    {"frame": 1560, "text": "23:59"},
+    {"frame": 1850, "text": "12:00", "static": true}
+  ],
+  "captions": [
+    {"frame": 0,    "end": 110,  "text": "POV: your shadow just waved at you", "static": true},
+    {"frame": 170,  "end": 290,  "text": "it's walking away"},
+    {"frame": 300,  "end": 420,  "text": "so is every other shadow"},
+    {"frame": 430,  "end": 580,  "text": "they're standing up"},
+    {"frame": 620,  "end": 760,  "text": "they can't enter the light"},
+    {"frame": 780,  "end": 880,  "text": "don't leave it"},
+    {"frame": 930,  "end": 1100, "text": "stay in the light"},
+    {"frame": 1210, "end": 1360, "text": "the sun is setting"},
+    {"frame": 1380, "end": 1540, "text": "the light is shrinking"},
+    {"frame": 1570, "end": 1660, "text": "now turn around"},
+    {"frame": 1900, "end": 2000, "text": "POV: your shadow just waved at you", "static": true}
+  ],
+  "impacts": [{"frame": 1640, "amp": 1.0}, {"frame": 160, "amp": 0.3}, {"frame": 620, "amp": 0.45}, {"frame": 300, "amp": 0.25}],
+  "tension": [[0,0.15],[150,0.2],[360,0.35],[600,0.55],[900,0.6],[1200,0.7],[1500,0.9],[1640,1.0],[1700,0.5],[1760,0.15],[2000,0.15]],
+  "sfx": [
+    {"frame": 160, "type": "boom"},
+    {"frame": 300, "type": "rumble"},
+    {"frame": 620, "type": "boom"},
+    {"frame": 1590, "type": "riser"},
+    {"frame": 1640, "type": "hit"}
+  ]
+}
