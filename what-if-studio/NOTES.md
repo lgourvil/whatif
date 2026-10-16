@@ -1,0 +1,3 @@
+# Notes de production (à relire à chaque épisode)
+
+- **Mains POV plus réalistes (demande de Louis, 2026-10-16)** : les mains actuelles de `studio/src/lib/Characters.tsx` (`PovHands`) sont des boîtes (avant-bras + paume + 4 doigts plats) et paraissent artificielles. Prochain épisode : les refaire avec 5 doigts + pouce articulés (2–3 phalanges, rotations pilotées par frame), paume et poignet aux proportions humaines, peau (pas des gants beige) et manche cohérente, légère respiration/micro-mouvement, doigts qui se referment/saisissent aux moments clés. Garder le style toon + contour inverted-hull.
