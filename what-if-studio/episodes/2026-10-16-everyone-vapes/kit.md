@@ -35,17 +35,26 @@
 | 9 | 71–75 s | Même cadre, même lumière que la frame 0 | boucle | *Same shot as the very first frame: close-up of my hand holding the vape at 100%, sunny city street.* |
 
 ## Textes à l'écran (horodatés)
-| t | Horodatage | Légende |
+**Gros titre permanent, lisible dès la frame 0 (sans fondu) :** « WHAT IF EVERYONE ON EARTH VAPED? », avec « WHAT IF » en jaune. Juste dessous, une **pastille rouge** affiche le compteur de bouffées (l'échelle de temps), puis viennent les **sous-titres de l'histoire** en minuscules, lisibles, qui décrivent chaque situation.
+
+| t | Pastille | Sous-titre |
 |---|---|---|
-| 0,0 s | PUFF 1 | POV: everyone on Earth vapes now |
-| 6,0 s | PUFF 40 | the bus driver (7,2 s) · grandma too (11,8 s) |
-| 16,0 s | PUFF 9,000 | those aren't clouds (16,7 s) · they're strawberry (21,7 s) |
-| 26,0 s | PUFF 2 MILLION | forecast: 100% strawberry rain (26,7 s) · it tastes like watermelon ice (31,7 s) |
-| 36,0 s | PUFF 8 BILLION | nobody has seen the sun in weeks (36,5 s) · and you still can't stop (41,3 s) |
-| 46,0 s | PUFF 1 TRILLION | you can't even see your hand (46,7 s) |
-| 52,0 s | 0% | every battery on Earth just died (52,2 s) · wait… the sky? (56,5 s) |
-| 60,0 s | PUFF 0 | nobody knows what to do (61 s) · just one more… (66,3 s) |
-| 71,0 s | PUFF 1 | POV: everyone on Earth vapes now (boucle) |
+| 0,0 s | PUFF 1 | One morning, every single person on Earth starts vaping. |
+| 3,9 s | PUFF 1 | 8 billion people. Exhaling at the same time. |
+| 7,1 s | PUFF 40 | The bus driver vapes at the wheel. |
+| 11,7 s | PUFF 40 | Even your grandma. Strawberry flavour. |
+| 16,3 s | PUFF 9,000 | All that vapour rises… and gets stuck in the sky. |
+| 21,6 s | PUFF 9,000 | The clouds turn pink. They smell like candy. |
+| 26,3 s | PUFF 2 MILLION | Then it rains. Pink, sticky, sweet rain. |
+| 31,6 s | PUFF 2 MILLION | Street lights switch on at noon. It's too dark to see. |
+| 36,2 s | PUFF 8 BILLION | The fog is so thick, nobody has seen the sun in weeks. |
+| 41,2 s | PUFF 8 BILLION | Everyone is coughing… and you still take another puff. |
+| 46,3 s | PUFF 1 TRILLION | You can't even see your own hand anymore. |
+| 52,1 s | 0% | Then every battery on Earth dies. All at once. |
+| 56,5 s | 0% | No more vapour. The fog tears open. The sun is back. |
+| 60,9 s | PUFF 0 | The whole street just stares at the blue sky. |
+| 66,2 s | PUFF 0 | Then you find a new one in your pocket… just one more. |
+| 71,0 s | PUFF 1 | One morning, every single person on Earth starts vaping. (boucle) |
 
 ## Conception sonore (par mouvement, fondus continus)
 Fil rouge : un **beat lo-fi chill** (76,8 BPM, Fmaj7–Em7–Dm7–Cmaj7, Rhodes, crépitement vinyle) qui devient de plus en plus **étouffé** à mesure que la vapeur s'épaissit : on entend littéralement le monde à travers le nuage. La musique est périodique sur 75 s, donc la boucle est sans couture.

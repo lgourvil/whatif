@@ -433,7 +433,7 @@ export const EveryoneVapes: React.FC = () => {
         </ThreeCanvas>
       </PostFx>
       <Overlay frame={frame} labels={W.TL.labels} captions={W.TL.captions} flash={flash} tension={tension}
-        haze={white * 0.95} hazeColor={`#${hazeCol.getHexString()}`} />
+        haze={white * 0.95} hazeColor={`#${hazeCol.getHexString()}`} title={W.TL.title} />
     </AbsoluteFill>
   );
 };

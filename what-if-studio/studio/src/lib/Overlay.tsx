@@ -37,12 +37,17 @@ type OverlayProps = {
   frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number; dark?: number;
   /** full-screen atmospheric haze between the 3D view and the text (0..1), e.g. a white-out */
   haze?: number; hazeColor?: string;
+  /**
+   * Story layout: a permanent "What if…?" headline (readable from frame 0, never faded), the time label as a small
+   * pill under it, and sentence-case story subtitles below that explain what is happening.
+   */
+  title?: string; accent?: string;
 };
 
 /** Label font size that keeps long labels ("PUFF 8 BILLION") on one line inside the safe column. */
 export const fitLabel = (text: string, maxW: number, max = 150) => Math.min(max, maxW / (text.length * 0.66));
 
-export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, dark = 0, haze = 0, hazeColor = '#ffffff'}) => {
+export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, dark = 0, haze = 0, hazeColor = '#ffffff', title, accent = '#ff2d55'}) => {
   const {fps, width, height} = useVideoConfig();
   const label = [...labels].reverse().find((l) => frame >= l.frame) ?? labels[0];
   const cap = captions.find((c) => frame >= c.frame && frame < c.end);
@@ -72,16 +77,38 @@ export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash,
         backgroundImage: `url("data:image/svg+xml,${grainSvg}")`, backgroundPosition: `${gx}px ${gy}px`,
         opacity: 0.09, mixBlendMode: 'overlay',
       }} />
-      <div style={{position: 'absolute', left: safeL, width: safeW, top: height * 0.17, textAlign: 'center', fontFamily: FONT, color: '#fff'}}>
-        <div style={{fontSize: fitLabel(label.text, safeW), fontWeight: 900, whiteSpace: 'nowrap', lineHeight: 1, letterSpacing: 2, textShadow: stroke, transform: `translateY(${lp.y}px) scale(${lp.s * pulse})`, WebkitTextStroke: '3px #000', paintOrder: 'stroke fill'}}>
-          {label.text}
-        </div>
-        {cap && (
-          <div style={{marginTop: 26, fontSize: 62, fontWeight: 900, lineHeight: 1.1, textShadow: stroke, opacity: capFade, transform: `translateY(${cp.y}px) scale(${cp.s})`, WebkitTextStroke: '2px #000', paintOrder: 'stroke fill', textTransform: 'uppercase'}}>
-            {cap.text}
+      {title ? (
+        <div style={{position: 'absolute', left: safeL, width: safeW, top: height * 0.152, textAlign: 'center', fontFamily: FONT, color: '#fff'}}>
+          <div style={{fontSize: 72, fontWeight: 900, lineHeight: 1.0, letterSpacing: 1, textShadow: stroke, WebkitTextStroke: '3px #000', paintOrder: 'stroke fill', textTransform: 'uppercase'}}>
+            {(() => {
+              const w = title.split(' ');
+              return (<><span style={{color: '#ffe14d'}}>{w.slice(0, 2).join(' ')}</span> {w.slice(2).join(' ')}</>);
+            })()}
           </div>
-        )}
-      </div>
+          <div style={{display: 'inline-block', marginTop: 16, padding: '6px 22px 8px', borderRadius: 18, background: accent, border: '4px solid #000',
+            boxShadow: '6px 6px 0 #000', fontSize: 44, fontWeight: 900, lineHeight: 1, letterSpacing: 2, whiteSpace: 'nowrap',
+            transform: `translateY(${lp.y * 0.5}px) scale(${lp.s * pulse})`, WebkitTextStroke: '2px #000', paintOrder: 'stroke fill'}}>
+            {label.text}
+          </div>
+          {cap && (
+            <div style={{margin: '20px auto 0', maxWidth: safeW - 20, fontSize: 50, fontWeight: 800, lineHeight: 1.15, textShadow: stroke, opacity: capFade,
+              transform: `translateY(${cp.y * 0.6}px) scale(${0.85 + 0.15 * cp.s})`, WebkitTextStroke: '2px #000', paintOrder: 'stroke fill'}}>
+              {cap.text}
+            </div>
+          )}
+        </div>
+      ) : (
+      <div style={{position: 'absolute', left: safeL, width: safeW, top: height * 0.17, textAlign: 'center', fontFamily: FONT, color: '#fff'}}>
+          <div style={{fontSize: fitLabel(label.text, safeW), fontWeight: 900, whiteSpace: 'nowrap', lineHeight: 1, letterSpacing: 2, textShadow: stroke, transform: `translateY(${lp.y}px) scale(${lp.s * pulse})`, WebkitTextStroke: '3px #000', paintOrder: 'stroke fill'}}>
+            {label.text}
+          </div>
+          {cap && (
+            <div style={{marginTop: 26, fontSize: 62, fontWeight: 900, lineHeight: 1.1, textShadow: stroke, opacity: capFade, transform: `translateY(${cp.y}px) scale(${cp.s})`, WebkitTextStroke: '2px #000', paintOrder: 'stroke fill', textTransform: 'uppercase'}}>
+              {cap.text}
+            </div>
+          )}
+        </div>
+      )}
       <AbsoluteFill style={{background: '#000', opacity: dark}} />
       <AbsoluteFill style={{background: '#fff', opacity: flash}} />
     </AbsoluteFill>
