@@ -17,11 +17,15 @@ type ParticlesProps = {
   wobble?: number;
   opacity?: number;
   emissive?: boolean;
+  /** anchor the box in WORLD space (particles stay put while the camera flies through them) instead of riding with `center` */
+  world?: boolean;
+  /** vertical stretch for speed streaks */
+  stretch?: number;
 };
 
 /** Deterministic closed-form particles: pos = wrap(seed + v*frame), no accumulated simulation. */
 export const Particles: React.FC<ParticlesProps> = ({
-  frame, seed, count, intensity, center, box, velocity, size, color, wobble = 0, opacity = 1,
+  frame, seed, count, intensity, center, box, velocity, size, color, wobble = 0, opacity = 1, world = false, stretch = 1,
 }) => {
   const ref = useRef<THREE.InstancedMesh>(null);
   const rnd = useMemo(() => {
@@ -40,17 +44,18 @@ export const Particles: React.FC<ParticlesProps> = ({
       } else {
         const r = i * 5;
         const w = (v: number, s: number) => ((v % s) + s) % s;
-        const x = w(rnd[r] * box[0] + velocity[0] * frame, box[0]) - box[0] / 2;
-        const y = w(rnd[r + 1] * box[1] + velocity[1] * frame, box[1]) - box[1] / 2;
-        const z = w(rnd[r + 2] * box[2] + velocity[2] * frame, box[2]) - box[2] / 2;
+        const ox = world ? center.x : 0, oy = world ? center.y : 0, oz = world ? center.z : 0;
+        const x = w(rnd[r] * box[0] + velocity[0] * frame - ox, box[0]) - box[0] / 2;
+        const y = w(rnd[r + 1] * box[1] + velocity[1] * frame - oy, box[1]) - box[1] / 2;
+        const z = w(rnd[r + 2] * box[2] + velocity[2] * frame - oz, box[2]) - box[2] / 2;
         const ph = rnd[r + 3] * 6.283;
         dummy.position.set(
           center.x + x + Math.sin(frame * 0.05 + ph) * wobble,
           center.y + y + Math.cos(frame * 0.043 + ph) * wobble,
           center.z + z,
         );
-        dummy.scale.setScalar(size * (0.5 + rnd[r + 4]));
-        dummy.rotation.set(ph, ph * 2, 0);
+        dummy.scale.set(size * (0.5 + rnd[r + 4]), size * (0.5 + rnd[r + 4]) * stretch, size * (0.5 + rnd[r + 4]));
+        dummy.rotation.set(stretch > 1 ? 0 : ph, ph * 2, 0);
       }
       dummy.updateMatrix();
       m.setMatrixAt(i, dummy.matrix);

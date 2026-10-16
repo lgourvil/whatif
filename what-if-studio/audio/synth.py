@@ -9,6 +9,8 @@ tl = json.load(open(sys.argv[1]))
 fps = tl["fps"]; dur = tl["durationInFrames"] / fps
 N = int(dur * SR); t = np.arange(N) / SR
 rng = np.random.default_rng(7)
+# Optional per-episode "audio" block in timeline.json; without it the ocean-drains defaults below apply.
+AU = tl.get("audio")
 
 def tens_at(sec):
     k = np.array(tl["tension"], float)
@@ -28,7 +30,7 @@ def place(buf, snd, sec, gain=1.0):
     if i < N: buf[i:j] += snd[: j - i] * gain
 
 # ---- music pad: slow chords, filter opens with tension (block-wise cutoff) ----
-chords = [[110.0, 164.8, 220.0, 277.2], [98.0, 146.8, 196.0, 246.9], [87.3, 130.8, 174.6, 220.0], [92.5, 138.6, 185.0, 233.1]]
+chords = (AU or {}).get("chords") or [[110.0, 164.8, 220.0, 277.2], [98.0, 146.8, 196.0, 246.9], [87.3, 130.8, 174.6, 220.0], [92.5, 138.6, 185.0, 233.1]]
 pad = np.zeros(N)
 seg = 8.0
 for k in range(int(np.ceil(dur / seg))):
@@ -50,18 +52,34 @@ pad *= 0.34 * (0.55 + 0.6 * T)
 # ---- sub drone rising with tension ----
 drone = np.sin(2 * np.pi * (41 + 14 * T) * t) * (0.1 + 0.3 * T ** 2)
 
-# ---- ocean / wind beds ----
-surf_env = env_at([0, 8, 20, 45, 49], [0.9, 0.5, 0.05, 0.0, 0.0]) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 7.5) ** 2)
-surf = lp(noise(N), 900) * surf_env * 0.22
-wind = bp(noise(N), 150, 900) * env_at([0, 12, 40, 60, 64, 66], [0.05, 0.15, 0.25, 0.4, 0.6, 0.0]) * 0.28
-# the water returning: roar that grows from the moment the wall appears
-wall_t0 = 1440 / fps; hit = 1962 / fps
-roar = lp(noise(N), 500) * env_at([0, wall_t0, hit - 4, hit, hit + 0.5, hit + 1.5], [0, 0, 0.35, 0.9, 0.0, 0.0]) * 0.8
-# night: faint crystal chime shimmer
+# ---- beds: configurable noise layers (+ legacy ocean defaults) ----
+def build_beds():
+    if AU is None:
+        surf_env = env_at([0, 8, 20, 45, 49], [0.9, 0.5, 0.05, 0.0, 0.0]) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 7.5) ** 2)
+        surf = lp(noise(N), 900) * surf_env * 0.22
+        wind = bp(noise(N), 150, 900) * env_at([0, 12, 40, 60, 64, 66], [0.05, 0.15, 0.25, 0.4, 0.6, 0.0]) * 0.28
+        wall_t0 = 1440 / fps; hit = 1962 / fps
+        roar = lp(noise(N), 500) * env_at([0, wall_t0, hit - 4, hit, hit + 0.5, hit + 1.5], [0, 0, 0.35, 0.9, 0.0, 0.0]) * 0.8
+        return surf + wind + roar, surf_env
+    out = np.zeros(N)
+    for bed in AU.get("beds", []):
+        e = np.array(bed["env"], float)
+        env = np.interp(t, e[:, 0], e[:, 1])
+        if bed["type"] == "wind":      # broadband rush
+            out += bp(noise(N), bed.get("lo", 150), bed.get("hi", 900)) * env * 0.5
+        elif bed["type"] == "air":     # thin high hiss, the air leaving
+            out += hp(noise(N), 3500) * env * 0.5
+        elif bed["type"] == "surf":
+            out += lp(noise(N), 900) * env * (0.5 + 0.5 * np.sin(2 * np.pi * t / 7.5) ** 2) * 0.22
+    return out, np.zeros(N)
+beds, surf_env = build_beds()
+surf = wind = roar = 0
+# night / weightless: faint crystal chime shimmer
 shimmer = np.zeros(N)
-for kk in range(40):
-    ts = 24 + kk * 1.0 + rng.random() * 0.8
-    if ts > 63: break
+c0, c1 = ((AU or {}).get("chime", {}).get("start", 24), (AU or {}).get("chime", {}).get("end", 63))
+for kk in range(80):
+    ts = c0 + kk * 1.0 + rng.random() * 0.8
+    if ts > c1: break
     f = rng.choice([880, 1318, 1760, 1175])
     n = int(1.8 * SR); tt = np.arange(n) / SR
     place(shimmer, np.sin(2 * np.pi * f * tt) * np.exp(-tt * 2.2) * 0.05, ts)
@@ -72,7 +90,7 @@ def step(sec, g, sand=True):
     n = int(0.12 * SR)
     s = noise(n); s = (bp(s, 200, 1800) if sand else lp(s, 400)) * np.exp(-np.arange(n) / SR * 40)
     place(steps, s, sec, g)
-for a, b, per in [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]:
+for a, b, per in (AU["steps"] if AU is not None else [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]):
     sec = a
     while sec < b:
         step(sec, 0.35 + 0.25 * float(tens_at(sec)))
@@ -80,7 +98,7 @@ for a, b, per in [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]:
 
 # ---- heartbeat + breath, both accelerate with tension ----
 heart = np.zeros(N)
-sec = 0.5
+sec = (AU or {}).get('heartStart', 0.5)
 while sec < dur - 1:
     tn = float(tens_at(sec)); bpm = 62 + 90 * tn; per = 60 / bpm
     for off, g in ((0, 1.0), (0.17 * per / 0.8 * 0.8 + 0.12, 0.7)):
@@ -89,7 +107,7 @@ while sec < dur - 1:
     sec += per
 breath = np.zeros(N)
 sec = 2.0
-while sec < 64.5:
+while sec < (AU or {}).get('breathEnd', 64.5):
     tn = float(tens_at(sec)); per = 4.2 - 2.9 * tn
     n = int(per * 0.55 * SR); tt = np.arange(n) / SR
     e = np.sin(np.pi * tt / (n / SR)) ** 2
@@ -116,9 +134,18 @@ def crash(sec, g):
     n = int(4 * SR); tt = np.arange(n) / SR
     s = lp(noise(n), 3000) * np.exp(-tt * 1.3) + np.sin(2 * np.pi * (55 * np.exp(-tt * 0.9) + 24) * tt) * np.exp(-tt * 1.0) * 1.4
     place(sfx, s, sec, g)
+def swell(sec, g):   # riser: filtered noise + rising tone, ends where the boom lands
+    d = (tl.get("restoreFrame", 1500) / fps) - sec
+    n = int(d * SR); tt = np.arange(n) / SR
+    x = noise(n); y = np.zeros(n); blk = 960
+    for i in range(0, n, blk):
+        fc = 200 * (1 + 14 * (tt[i] / d) ** 2)
+        y[i:i + blk] = bp(x[i:i + blk], fc * 0.6, fc * 1.6)
+    tone = np.sin(2 * np.pi * np.cumsum(120 + 600 * (tt / d) ** 2) / SR)
+    place(sfx, (y * 1.6 + tone * 0.25) * (tt / d) ** 2, sec, g)
 for ev in tl["sfx"]:
     s = ev["frame"] / fps
-    {"boom": lambda: boom(s, 0.9), "rumble": lambda: rumble(s, 0.7), "whoosh": lambda: whoosh(s, 0.7), "crash": lambda: crash(s, 1.6)}[ev["type"]]()
+    {"boom": lambda: boom(s, 0.9), "rumble": lambda: rumble(s, 0.7), "whoosh": lambda: whoosh(s, 0.7), "crash": lambda: crash(s, 1.6), "swell": lambda: swell(s, 0.9)}[ev["type"]]()
 for m in tl["movements"][1:]:  # soft whoosh on each camera movement boundary
     whoosh(m["start"] / fps, 0.18, 0.6)
 for l in tl["labels"]:         # tick on each timestamp pop
@@ -126,7 +153,10 @@ for l in tl["labels"]:         # tick on each timestamp pop
     place(sfx, np.sin(2 * np.pi * 1200 * tt) * np.exp(-tt * 35), l["frame"] / fps, 0.12)
 
 # ---- mix, loop-safe fades, stereo spread ----
-mono = pad + drone * 0.5 + surf + wind + roar + shimmer + steps + heart + breath + sfx
+duck = np.ones(N)
+for a, b, g in (AU or {}).get("duck", []):  # hush before an impact: everything but the heartbeat dips, with 1 s ramps
+    duck = np.minimum(duck, np.interp(t, [a - 1, a, b, b + 0.04], [1, g, g, 1]))
+mono = (pad + drone * 0.5 + beds + shimmer + steps + breath + sfx) * duck + heart
 fade = np.minimum(1, t / 0.05) * np.minimum(1, (dur - t) / 0.4)
 mono *= fade
 d = int(0.012 * SR)
