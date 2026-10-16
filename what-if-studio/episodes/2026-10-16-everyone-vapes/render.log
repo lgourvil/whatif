@@ -1,0 +1,28 @@
+# everyone-vapes — render log (2026-10-16)
+Backend: --gl=angle (software WebGL), concurrency 3, crf 16, x264 slow, yuv420p, bt709
+QC clip 1520-1639: 846 s / 120 frames (~7 s/frame) → full render split in 3 chunks (render-part.sh), joined with join-parts.sh (stream copy + AAC 256k)
+Perf decisions: shadows kept but 'basic' (hard, toon), accent PointLight replaced by emissive LED glow (~10 %), antialias off; duration/resolution/fps untouched
+--- part1
+Fri Oct 16 17:53:33 UTC 2026
+Rendered 749/750, time remaining: 14s
++                    out/part1.mp4 48.4 MB
+EXIT 0
+Fri Oct 16 18:55:02 UTC 2026
+--- part2
+Fri Oct 16 18:55:50 UTC 2026
+Rendered 749/750, time remaining: 21s
++                    out/part2.mp4 42.5 MB
+EXIT 0
+Fri Oct 16 20:25:53 UTC 2026
+--- part3
+Fri Oct 16 20:26:28 UTC 2026
+Rendered 749/750, time remaining: 14s
++                    out/part3.mp4 50 MB
+EXIT 0
+Fri Oct 16 21:28:37 UTC 2026
+--- join
+stream|codec_type=video|width=1080|height=1920|r_frame_rate=30/1
+stream|codec_type=audio|r_frame_rate=0/0
+format|duration=75.000000
+frames: 2250 · loudness: -14.6 LUFS integrated · first/last frame mean abs diff ≈ 7/255 (loop OK)
+MP4 kept out of git → GitHub Release what-if-2026-10-16
