@@ -28,3 +28,10 @@ export const SHADOWS_NOON: Palette[] = [
   {zenith: '#4b2a7a', horizon: '#ff8f45', ground: '#ead9b0', water: '#b84a5a', accent: '#ffd23f'},
   {zenith: '#05030c', horizon: '#2a0b1c', ground: '#ead9b0', water: '#2a2140', accent: '#ffd23f'},
 ];
+
+/** Everyone Vapes: clear afternoon -> strawberry haze -> choking red-pink white-out. accent = the device's red. */
+export const EVERYONE_VAPES: Palette[] = [
+  {zenith: '#3d7fe0', horizon: '#ffd1a1', ground: '#c9b9a8', water: '#e8a07a', accent: '#ff2d55'},
+  {zenith: '#e48db2', horizon: '#ffd6e2', ground: '#c4a9b2', water: '#d98ea0', accent: '#ff2d55'},
+  {zenith: '#a8506e', horizon: '#f3b2c4', ground: '#9a7480', water: '#b06a80', accent: '#ff3b30'},
+];

@@ -4,7 +4,7 @@ import {AbsoluteFill, random, spring, useVideoConfig} from 'remotion';
 export type Label = {frame: number; text: string; static?: boolean};
 export type Caption = {frame: number; end: number; text: string; static?: boolean};
 
-const FONT = `"Arial Black", "DejaVu Sans", "Liberation Sans", Impact, sans-serif`;
+const FONT = `"Inter Display", "Inter", "Arial Black", "DejaVu Sans", "Liberation Sans", Impact, sans-serif`;
 const stroke = '0 0 0 #000, 6px 6px 0 #000, -4px 4px 0 #000, 4px -4px 0 #000, -4px -4px 0 #000, 0 10px 24px rgba(0,0,0,.6)';
 
 const grainSvg = encodeURIComponent(
@@ -33,9 +33,16 @@ export const PostFx: React.FC<{shock: number; children: React.ReactNode}> = ({sh
   );
 };
 
-type OverlayProps = {frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number; dark?: number};
+type OverlayProps = {
+  frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number; dark?: number;
+  /** full-screen atmospheric haze between the 3D view and the text (0..1), e.g. a white-out */
+  haze?: number; hazeColor?: string;
+};
 
-export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, dark = 0}) => {
+/** Label font size that keeps long labels ("PUFF 8 BILLION") on one line inside the safe column. */
+export const fitLabel = (text: string, maxW: number, max = 150) => Math.min(max, maxW / (text.length * 0.66));
+
+export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, dark = 0, haze = 0, hazeColor = '#ffffff'}) => {
   const {fps, width, height} = useVideoConfig();
   const label = [...labels].reverse().find((l) => frame >= l.frame) ?? labels[0];
   const cap = captions.find((c) => frame >= c.frame && frame < c.end);
@@ -58,13 +65,15 @@ export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash,
 
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
+      {haze > 0.001 && <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 55%, ${hazeColor} 0%, ${hazeColor} 35%, ${hazeColor}00 120%)`, opacity: haze}} />}
+      {haze > 0.001 && <AbsoluteFill style={{background: hazeColor, opacity: Math.max(0, haze - 0.35) * 0.9}} />}
       <AbsoluteFill style={{background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,${vig}) 100%)`}} />
       <AbsoluteFill style={{
         backgroundImage: `url("data:image/svg+xml,${grainSvg}")`, backgroundPosition: `${gx}px ${gy}px`,
         opacity: 0.09, mixBlendMode: 'overlay',
       }} />
       <div style={{position: 'absolute', left: safeL, width: safeW, top: height * 0.17, textAlign: 'center', fontFamily: FONT, color: '#fff'}}>
-        <div style={{fontSize: 150, fontWeight: 900, lineHeight: 1, letterSpacing: 2, textShadow: stroke, transform: `translateY(${lp.y}px) scale(${lp.s * pulse})`, WebkitTextStroke: '3px #000', paintOrder: 'stroke fill'}}>
+        <div style={{fontSize: fitLabel(label.text, safeW), fontWeight: 900, whiteSpace: 'nowrap', lineHeight: 1, letterSpacing: 2, textShadow: stroke, transform: `translateY(${lp.y}px) scale(${lp.s * pulse})`, WebkitTextStroke: '3px #000', paintOrder: 'stroke fill'}}>
           {label.text}
         </div>
         {cap && (

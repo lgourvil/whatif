@@ -43,5 +43,15 @@
   "branch": "claude/brave-clarke-si7bps",
   "timeScale": "clock 12:00 → 23:59 → 12:00",
   "durationSeconds": 66.7
+ },
+ {
+  "date": "2026-10-16",
+  "slug": "everyone-vapes",
+  "title": "What if everyone on Earth vaped?",
+  "theme": "société / santé (satire)",
+  "branch": "episode/2026-10-16-everyone-vapes",
+  "timeScale": "puff counter PUFF 1 → 1 TRILLION → 0% → PUFF 1 (accelerating)",
+  "durationSeconds": 75.0,
+  "note": "hero prop modelled from Louis' reference photo; fictional brand HAZE instead of the real logo"
  }
 ]

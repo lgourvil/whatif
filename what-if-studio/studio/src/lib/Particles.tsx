@@ -17,11 +17,13 @@ type ParticlesProps = {
   wobble?: number;
   opacity?: number;
   emissive?: boolean;
+  /** elongate along the velocity (rain streaks): y scale multiplier */
+  stretch?: number;
 };
 
 /** Deterministic closed-form particles: pos = wrap(seed + v*frame), no accumulated simulation. */
 export const Particles: React.FC<ParticlesProps> = ({
-  frame, seed, count, intensity, center, box, velocity, size, color, wobble = 0, opacity = 1,
+  frame, seed, count, intensity, center, box, velocity, size, color, wobble = 0, opacity = 1, stretch = 1,
 }) => {
   const ref = useRef<THREE.InstancedMesh>(null);
   const rnd = useMemo(() => {
@@ -49,8 +51,14 @@ export const Particles: React.FC<ParticlesProps> = ({
           center.y + y + Math.cos(frame * 0.043 + ph) * wobble,
           center.z + z,
         );
-        dummy.scale.setScalar(size * (0.5 + rnd[r + 4]));
-        dummy.rotation.set(ph, ph * 2, 0);
+        const sz = size * (0.5 + rnd[r + 4]);
+        if (stretch !== 1) {
+          dummy.scale.set(sz, sz * stretch, sz);
+          dummy.rotation.set(-Math.atan2(velocity[2], -velocity[1]), 0, Math.atan2(velocity[0], -velocity[1]));
+        } else {
+          dummy.scale.setScalar(sz);
+          dummy.rotation.set(ph, ph * 2, 0);
+        }
       }
       dummy.updateMatrix();
       m.setMatrixAt(i, dummy.matrix);
