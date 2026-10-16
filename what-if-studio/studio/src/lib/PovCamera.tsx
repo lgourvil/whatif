@@ -18,6 +18,12 @@ export type PovSpec = {
   impacts: {frame: number; amp: number}[];
   /** keyed dolly-zoom strength (0 = off, 1 = full compensation) */
   dolly?: Key[];
+  /** altitude above the ground in metres (zero-g / falling episodes) */
+  lift?: Key[];
+  /** 0..1 how weightless the body is: kills the walk bob, adds slow drifting sway + roll */
+  float?: Key[];
+  /** extra roll in radians (tumbling) */
+  roll?: Key[];
 };
 
 export type Pose = {
@@ -50,7 +56,8 @@ export const computePose = (
   const phase = u * len / 0.75 * Math.PI; // one step per 0.75 m
   const tension = smooth(frame, s.tension);
 
-  const moving = Math.min(1, speed / 1.2);
+  const fl = s.float ? smooth(frame, s.float) : 0;
+  const moving = Math.min(1, speed / 1.2) * (1 - fl);
   const run = Math.min(1, speed / 7);
   const bobAmp = moving * (0.045 + run * 0.1);
   const bob = Math.abs(Math.sin(phase)) * bobAmp;
@@ -72,7 +79,7 @@ export const computePose = (
 
   const yaw = smooth(frame, s.yaw) + nYaw + sway * 0.02;
   const pitch = smooth(frame, s.pitch) + nPit + shock * 0.09;
-  const roll = roll0 + nRol + shock * 0.05;
+  const roll = roll0 + nRol + shock * 0.05 + (s.roll ? smooth(frame, s.roll) : 0) + Math.sin(frame * 0.017) * 0.05 * fl;
   const fov = smooth(frame, s.fov);
 
   const fwd = new THREE.Vector3(Math.sin(yaw), 0, -Math.cos(yaw));
@@ -81,7 +88,9 @@ export const computePose = (
   const right = new THREE.Vector3(-fwd.z, 0, fwd.x);
 
   const pos = new THREE.Vector3(p.x, 0, p.z).addScaledVector(fwd, dz).addScaledVector(right, sway);
-  pos.y = ground(pos.x, pos.z) + s.eye + bob + shock * 0.12;
+  pos.y = ground(pos.x, pos.z) + s.eye + bob + shock * 0.12 + (s.lift ? smooth(frame, s.lift) : 0)
+    + Math.sin(frame * 0.021) * 0.3 * fl;
+  pos.addScaledVector(right, Math.sin(frame * 0.013 + 1) * 0.4 * fl);
 
   const dir = new THREE.Vector3(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), -Math.cos(yaw) * Math.cos(pitch));
   const m = new THREE.Matrix4().lookAt(pos, pos.clone().add(dir), new THREE.Vector3(0, 1, 0));

@@ -21,3 +21,10 @@ export const OCEAN_DRAINS: Palette[] = [
   {zenith: '#050a26', horizon: '#2b4c8f', ground: '#e6c28c', water: '#2a8fa0', accent: '#7ef0ff'},
   {zenith: '#1e0509', horizon: '#e0222c', ground: '#e6c28c', water: '#2a8fa0', accent: '#ff3b30'},
 ];
+
+/** Gravity Off: warm morning -> violet near-space -> red tension at the 9.9 s freeze. */
+export const GRAVITY_OFF: Palette[] = [
+  {zenith: '#2f78ff', horizon: '#ffcf8f', ground: '#7fd06a', water: '#3fc1d9', accent: '#ff5d73'},
+  {zenith: '#07031f', horizon: '#7b57e6', ground: '#7fd06a', water: '#3fc1d9', accent: '#7ef0ff'},
+  {zenith: '#240308', horizon: '#ff4a3a', ground: '#7fd06a', water: '#3fc1d9', accent: '#ff3b30'},
+];

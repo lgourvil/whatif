@@ -1,0 +1,363 @@
+{
+ "fps": 30,
+ "durationInFrames": 2160,
+ "restoreFrame": 1500,
+ "movements": [
+  {
+   "id": 1,
+   "start": 0,
+   "end": 240,
+   "label": "0.0s",
+   "desc": "Standing in the plaza, hands in frame, Pip waves; leaves start to lift"
+  },
+  {
+   "id": 2,
+   "start": 240,
+   "end": 560,
+   "label": "1.1s",
+   "desc": "Feet leave the ground; look down: pond, benches, trees all rise"
+  },
+  {
+   "id": 3,
+   "start": 560,
+   "end": 830,
+   "label": "2.5s",
+   "desc": "Head tilts up, fly through the cloud deck (white-out), emerge above"
+  },
+  {
+   "id": 4,
+   "start": 830,
+   "end": 1160,
+   "label": "4.8s",
+   "desc": "Above the clouds, sky goes violet and starry, houses drift past"
+  },
+  {
+   "id": 5,
+   "start": 1160,
+   "end": 1500,
+   "label": "7.2s",
+   "desc": "Vertigo: you look down at the tiny world, silence, dolly zoom"
+  },
+  {
+   "id": 6,
+   "start": 1500,
+   "end": 1610,
+   "label": "10.0s",
+   "desc": "Gravity returns: freefall, ground rushing up"
+  },
+  {
+   "id": 7,
+   "start": 1610,
+   "end": 1760,
+   "label": "10.0s",
+   "desc": "Impact, white-out"
+  },
+  {
+   "id": 8,
+   "start": 1760,
+   "end": 2160,
+   "label": "0.0s",
+   "desc": "Same plaza, same frame as the start (loop)"
+  }
+ ],
+ "labels": [
+  {
+   "frame": 0,
+   "text": "0.0s",
+   "static": true
+  },
+  {
+   "frame": 150,
+   "text": "0.4s"
+  },
+  {
+   "frame": 330,
+   "text": "1.1s"
+  },
+  {
+   "frame": 560,
+   "text": "2.5s"
+  },
+  {
+   "frame": 830,
+   "text": "4.8s"
+  },
+  {
+   "frame": 1100,
+   "text": "7.2s"
+  },
+  {
+   "frame": 1330,
+   "text": "9.9s"
+  },
+  {
+   "frame": 1500,
+   "text": "10.0s"
+  },
+  {
+   "frame": 1760,
+   "text": "10.1s"
+  },
+  {
+   "frame": 2060,
+   "text": "0.0s",
+   "static": true
+  }
+ ],
+ "captions": [
+  {
+   "frame": 0,
+   "end": 130,
+   "text": "POV: gravity just switched off",
+   "static": true
+  },
+  {
+   "frame": 200,
+   "end": 340,
+   "text": "your feet left the ground"
+  },
+  {
+   "frame": 380,
+   "end": 540,
+   "text": "so did the pond"
+  },
+  {
+   "frame": 590,
+   "end": 730,
+   "text": "so did the trees"
+  },
+  {
+   "frame": 880,
+   "end": 1040,
+   "text": "above the clouds. still rising."
+  },
+  {
+   "frame": 1110,
+   "end": 1270,
+   "text": "the air is leaving too"
+  },
+  {
+   "frame": 1345,
+   "end": 1495,
+   "text": "it's coming back"
+  },
+  {
+   "frame": 1510,
+   "end": 1605,
+   "text": "HOLD ON"
+  },
+  {
+   "frame": 1790,
+   "end": 1960,
+   "text": "nobody even noticed"
+  },
+  {
+   "frame": 2060,
+   "end": 2160,
+   "text": "POV: gravity just switched off",
+   "static": true
+  }
+ ],
+ "impacts": [
+  {
+   "frame": 1609,
+   "amp": 1.0
+  },
+  {
+   "frame": 1500,
+   "amp": 0.5
+  },
+  {
+   "frame": 760,
+   "amp": 0.2
+  }
+ ],
+ "tension": [
+  [
+   0,
+   0.1
+  ],
+  [
+   300,
+   0.2
+  ],
+  [
+   600,
+   0.3
+  ],
+  [
+   900,
+   0.45
+  ],
+  [
+   1150,
+   0.6
+  ],
+  [
+   1330,
+   0.75
+  ],
+  [
+   1495,
+   0.9
+  ],
+  [
+   1520,
+   1.0
+  ],
+  [
+   1609,
+   1.0
+  ],
+  [
+   1640,
+   0.3
+  ],
+  [
+   1760,
+   0.1
+  ],
+  [
+   2160,
+   0.1
+  ]
+ ],
+ "sfx": [
+  {
+   "frame": 700,
+   "type": "whoosh"
+  },
+  {
+   "frame": 780,
+   "type": "whoosh"
+  },
+  {
+   "frame": 1340,
+   "type": "swell"
+  },
+  {
+   "frame": 1500,
+   "type": "boom"
+  },
+  {
+   "frame": 1520,
+   "type": "whoosh"
+  },
+  {
+   "frame": 1609,
+   "type": "crash"
+  },
+  {
+   "frame": 1610,
+   "type": "rumble"
+  }
+ ],
+ "audio": {
+  "chords": [
+   [
+    130.8,
+    196.0,
+    261.6,
+    329.6
+   ],
+   [
+    110.0,
+    164.8,
+    220.0,
+    277.2
+   ],
+   [
+    87.3,
+    130.8,
+    174.6,
+    220.0
+   ],
+   [
+    98.0,
+    146.8,
+    196.0,
+    246.9
+   ]
+  ],
+  "beds": [
+   {
+    "type": "wind",
+    "env": [
+     [
+      0,
+      0.04
+     ],
+     [
+      10,
+      0.12
+     ],
+     [
+      30,
+      0.3
+     ],
+     [
+      44,
+      0.12
+     ],
+     [
+      49,
+      0.02
+     ],
+     [
+      50,
+      0.0
+     ],
+     [
+      50.4,
+      0.9
+     ],
+     [
+      53.5,
+      1.0
+     ],
+     [
+      53.7,
+      0.0
+     ]
+    ],
+    "lo": 150,
+    "hi": 1200
+   },
+   {
+    "type": "air",
+    "env": [
+     [
+      0,
+      0.0
+     ],
+     [
+      30,
+      0.0
+     ],
+     [
+      37,
+      0.12
+     ],
+     [
+      44,
+      0.0
+     ]
+    ]
+   }
+  ],
+  "steps": [],
+  "chime": {
+   "start": 22,
+   "end": 47
+  },
+  "duck": [
+   [
+    44.5,
+    50.0,
+    0.12
+   ]
+  ],
+  "heartStart": 0.5,
+  "breathEnd": 49.5
+ }
+}
