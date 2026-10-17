@@ -24,5 +24,5 @@ Fri Oct 16 21:28:37 UTC 2026
 stream|codec_type=video|width=1080|height=1920|r_frame_rate=30/1
 stream|codec_type=audio|r_frame_rate=0/0
 format|duration=75.000000
-frames: 2250 · loudness: -14.6 LUFS integrated · first/last frame mean abs diff ≈ 7/255 (loop OK)
+frames: 2250 · loudness: -14.6 LUFS · loop diff ≈ 7/255 · v2 (17 Oct): permanent What-if headline + story subtitles, same 3D/audio
 MP4 kept out of git → GitHub Release what-if-2026-10-16
