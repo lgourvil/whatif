@@ -1,0 +1,59 @@
+{
+  "fps": 30,
+  "durationInFrames": 2100,
+  "movements": [
+    {"id": 1, "start": 0,    "end": 180,  "label": "0.0s",   "desc": "Plaza at sunset, coffee cup in hand, Pip beside you; the cup slips out of your fingers and floats up"},
+    {"id": 2, "start": 180,  "end": 540,  "label": "9.9s",   "desc": "Slow-motion lift-off: tiles, benches, trees and you leave the ground, plaza shrinks below"},
+    {"id": 3, "start": 540,  "end": 1000, "label": "Hour 1", "desc": "Time-lapse in the same sky: sunset to night, debris swirling, Pip drifting beside you"},
+    {"id": 4, "start": 1000, "end": 1260, "label": "Hour 6", "desc": "You look up: the whole sea hangs above you like a ceiling (dolly zoom)"},
+    {"id": 5, "start": 1260, "end": 1500, "label": "Day 3",  "desc": "Red dawn, everything stops moving, deep silence, Pip's antenna flickers"},
+    {"id": 6, "start": 1500, "end": 1800, "label": "3.0s",   "desc": "Gravity is back: free fall, everything crashes down with you"},
+    {"id": 7, "start": 1800, "end": 1960, "label": "0.0s",   "desc": "Impact, white-out, light fade"},
+    {"id": 8, "start": 1960, "end": 2100, "label": "0.0s",   "desc": "Same plaza, same sunset, same frame as the start (loop)"}
+  ],
+  "labels": [
+    {"frame": 0,    "text": "0.0s", "static": true},
+    {"frame": 180,  "text": "2.4s"},
+    {"frame": 300,  "text": "5.1s"},
+    {"frame": 450,  "text": "9.9s"},
+    {"frame": 600,  "text": "Hour 1"},
+    {"frame": 1000, "text": "Hour 6"},
+    {"frame": 1300, "text": "Day 3"},
+    {"frame": 1530, "text": "3.0s"},
+    {"frame": 1610, "text": "2.0s"},
+    {"frame": 1690, "text": "1.0s"},
+    {"frame": 1790, "text": "0.0s"},
+    {"frame": 1960, "text": "0.0s", "static": true}
+  ],
+  "captions": [
+    {"frame": 0,    "end": 150,  "text": "POV: gravity just switched off", "static": true},
+    {"frame": 200,  "end": 330,  "text": "nothing is bolted down"},
+    {"frame": 350,  "end": 470,  "text": "you are not bolted down"},
+    {"frame": 480,  "end": 590,  "text": "don't look down"},
+    {"frame": 640,  "end": 800,  "text": "the sun sets under you"},
+    {"frame": 830,  "end": 980,  "text": "nobody is coming"},
+    {"frame": 1030,  "end": 1250, "text": "the ocean is above you now"},
+    {"frame": 1330, "end": 1490, "text": "why did it get quiet"},
+    {"frame": 1530, "end": 1640, "text": "oh no"},
+    {"frame": 1650, "end": 1780, "text": "BRACE"},
+    {"frame": 1990, "end": 2100, "text": "POV: gravity just switched off", "static": true}
+  ],
+  "impacts": [{"frame": 1790, "amp": 1.0}, {"frame": 105, "amp": 0.35}, {"frame": 250, "amp": 0.3}, {"frame": 1120, "amp": 0.4}],
+  "tension": [[0,0.1],[100,0.2],[300,0.35],[600,0.3],[1000,0.45],[1240,0.55],[1300,0.35],[1480,0.75],[1560,0.85],[1790,1.0],[1830,0.5],[1900,0.1],[2100,0.1]],
+  "sfx": [
+    {"frame": 105, "type": "boom"},
+    {"frame": 250, "type": "rumble"},
+    {"frame": 1120, "type": "boom"},
+    {"frame": 1480, "type": "rumble"},
+    {"frame": 1510, "type": "whoosh"},
+    {"frame": 1790, "type": "crash"}
+  ],
+  "audio": {
+    "hit": 1790,
+    "fallStart": 1500,
+    "silence": [1300, 1480],
+    "steps": [],
+    "chimes": [600, 1250],
+    "heartFloor": 56
+  }
+}

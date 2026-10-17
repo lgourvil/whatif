@@ -48,15 +48,18 @@ type PipProps = {
   scarf: THREE.ColorRepresentation;
   glow: THREE.ColorRepresentation;
   frame: number;
+  /** extra whole-body rotation (weightless tumbling) */
+  tumble?: [number, number, number];
 };
 
 /** Pip: original recurring companion. Round low-poly body, visor, long scarf and a glowing antenna. */
-export const Pip: React.FC<PipProps> = ({position, yaw, phase, moving, point, scale = 1, body, scarf, glow, frame}) => {
+export const Pip: React.FC<PipProps> = ({position, yaw, phase, moving, point, scale = 1, body, scarf, glow, frame, tumble = [0, 0, 0]}) => {
   const sw = Math.sin(phase) * 0.7 * moving;
   const bob = Math.abs(Math.sin(phase)) * 0.05 * moving;
   return (
     <group position={position} rotation={[0, -yaw, 0]} scale={scale}>
-      <group position={[0, bob, 0]}>
+      <group position={[0, bob + 1, 0]} rotation={tumble}>
+      <group position={[0, -1, 0]}>
         <Outlined geometry={G.body} color={body} position={[0, 0.95, 0]} />
         <Outlined geometry={G.head} color={body} position={[0, 1.6, 0]} />
         <Outlined geometry={G.visor} color="#111111" position={[0, 1.62, -0.2]} thickness={0.03} />
@@ -79,6 +82,7 @@ export const Pip: React.FC<PipProps> = ({position, yaw, phase, moving, point, sc
         <group position={[0.42, 1.28, 0]} rotation={[sw * 0.8 - point * 2.9, 0, -0.15]}>
           <Outlined geometry={G.arm} color={body} position={[0, -0.25, 0]} />
         </group>
+      </group>
       </group>
     </group>
   );

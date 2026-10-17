@@ -21,3 +21,11 @@ export const OCEAN_DRAINS: Palette[] = [
   {zenith: '#050a26', horizon: '#2b4c8f', ground: '#e6c28c', water: '#2a8fa0', accent: '#7ef0ff'},
   {zenith: '#1e0509', horizon: '#e0222c', ground: '#e6c28c', water: '#2a8fa0', accent: '#ff3b30'},
 ];
+
+/** Gravity Off: warm plaza sunset -> cold dusk -> deep night -> red dawn of tension. Slot `water` = sea / secondary. */
+export const GRAVITY_OFF: Palette[] = [
+  {zenith: '#4a2f7a', horizon: '#ff9f5a', ground: '#d9b98a', water: '#2d93a8', accent: '#ff5d73'},
+  {zenith: '#1a1b4f', horizon: '#c0568f', ground: '#a98c78', water: '#276f9a', accent: '#ffd36b'},
+  {zenith: '#030617', horizon: '#1c3a74', ground: '#6f6a7c', water: '#1d4f86', accent: '#7ef0ff'},
+  {zenith: '#240609', horizon: '#ff4a2e', ground: '#a8685a', water: '#7a2c4a', accent: '#ffb347'},
+];
