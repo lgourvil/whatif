@@ -9,6 +9,10 @@ tl = json.load(open(sys.argv[1]))
 fps = tl["fps"]; dur = tl["durationInFrames"] / fps
 N = int(dur * SR); t = np.arange(N) / SR
 rng = np.random.default_rng(7)
+A = tl.get("audio", {})
+HIT = A.get("hit", 1962) / fps; FALL = A.get("fallStart", 1440) / fps
+SIL = [x / fps for x in A.get("silence", [0, 0])]
+CH = [x / fps for x in A.get("chimes", [24 * fps, 63 * fps])]
 
 def tens_at(sec):
     k = np.array(tl["tension"], float)
@@ -51,17 +55,17 @@ pad *= 0.34 * (0.55 + 0.6 * T)
 drone = np.sin(2 * np.pi * (41 + 14 * T) * t) * (0.1 + 0.3 * T ** 2)
 
 # ---- ocean / wind beds ----
-surf_env = env_at([0, 8, 20, 45, 49], [0.9, 0.5, 0.05, 0.0, 0.0]) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 7.5) ** 2)
+surf_env = env_at([0, 8, 20, 45, 49], [0.9, 0.5, 0.05, 0.0, 0.0]) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 7.5) ** 2) * float(A.get("surf", 0.0))
 surf = lp(noise(N), 900) * surf_env * 0.22
-wind = bp(noise(N), 150, 900) * env_at([0, 12, 40, 60, 64, 66], [0.05, 0.15, 0.25, 0.4, 0.6, 0.0]) * 0.28
+wind = bp(noise(N), 150, 900) * (0.05 + 0.5 * T) * 0.4
 # the water returning: roar that grows from the moment the wall appears
-wall_t0 = 1440 / fps; hit = 1962 / fps
+wall_t0 = FALL; hit = HIT
 roar = lp(noise(N), 500) * env_at([0, wall_t0, hit - 4, hit, hit + 0.5, hit + 1.5], [0, 0, 0.35, 0.9, 0.0, 0.0]) * 0.8
 # night: faint crystal chime shimmer
 shimmer = np.zeros(N)
 for kk in range(40):
-    ts = 24 + kk * 1.0 + rng.random() * 0.8
-    if ts > 63: break
+    ts = CH[0] + kk * 1.0 + rng.random() * 0.8
+    if ts > CH[1]: break
     f = rng.choice([880, 1318, 1760, 1175])
     n = int(1.8 * SR); tt = np.arange(n) / SR
     place(shimmer, np.sin(2 * np.pi * f * tt) * np.exp(-tt * 2.2) * 0.05, ts)
@@ -72,7 +76,7 @@ def step(sec, g, sand=True):
     n = int(0.12 * SR)
     s = noise(n); s = (bp(s, 200, 1800) if sand else lp(s, 400)) * np.exp(-np.arange(n) / SR * 40)
     place(steps, s, sec, g)
-for a, b, per in [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]:
+for a, b, per in A.get("steps", [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]):
     sec = a
     while sec < b:
         step(sec, 0.35 + 0.25 * float(tens_at(sec)))
@@ -82,14 +86,14 @@ for a, b, per in [(3.4, 8.0, 0.62), (10.0, 46.0, 0.55), (54.0, 65.4, 0.30)]:
 heart = np.zeros(N)
 sec = 0.5
 while sec < dur - 1:
-    tn = float(tens_at(sec)); bpm = 62 + 90 * tn; per = 60 / bpm
+    tn = float(tens_at(sec)); bpm = A.get('heartFloor', 62) + 90 * tn; per = 60 / bpm
     for off, g in ((0, 1.0), (0.17 * per / 0.8 * 0.8 + 0.12, 0.7)):
         n = int(0.22 * SR); tt = np.arange(n) / SR
         place(heart, np.sin(2 * np.pi * 52 * tt) * np.exp(-tt * 22) * g, sec + off, 0.5 * (0.15 + 0.85 * tn))
     sec += per
 breath = np.zeros(N)
 sec = 2.0
-while sec < 64.5:
+while sec < HIT - 1:
     tn = float(tens_at(sec)); per = 4.2 - 2.9 * tn
     n = int(per * 0.55 * SR); tt = np.arange(n) / SR
     e = np.sin(np.pi * tt / (n / SR)) ** 2
@@ -126,7 +130,9 @@ for l in tl["labels"]:         # tick on each timestamp pop
     place(sfx, np.sin(2 * np.pi * 1200 * tt) * np.exp(-tt * 35), l["frame"] / fps, 0.12)
 
 # ---- mix, loop-safe fades, stereo spread ----
-mono = pad + drone * 0.5 + surf + wind + roar + shimmer + steps + heart + breath + sfx
+# the silence: bed ducks out, heartbeat stays
+duck = 1 - 0.85 * (np.clip((t - SIL[0]) / 0.7, 0, 1) - np.clip((t - SIL[1]) / 0.7, 0, 1)) * (1 if SIL[1] > SIL[0] else 0)
+mono = (pad + drone * 0.5 + surf + wind + shimmer) * duck + roar + steps + heart * (1.5 - 0.5 * duck) + breath + sfx
 fade = np.minimum(1, t / 0.05) * np.minimum(1, (dur - t) / 0.4)
 mono *= fade
 d = int(0.012 * SR)

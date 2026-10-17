@@ -33,9 +33,24 @@ export const PostFx: React.FC<{shock: number; children: React.ReactNode}> = ({sh
   );
 };
 
-type OverlayProps = {frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number};
+/** Radial speed lines for falls / warps: deterministic per frame, 0..1 strength. */
+export const SpeedLines: React.FC<{frame: number; amount: number}> = ({frame, amount}) => {
+  const {width, height} = useVideoConfig();
+  if (amount < 0.02) return null;
+  const n = 46, cx = width / 2, cy = height / 2, R = Math.hypot(cx, cy);
+  const lines = Array.from({length: n}, (_, i) => {
+    const a = random(`sl-a-${i}`) * Math.PI * 2;
+    const ph = (random(`sl-p-${i}`) + frame * (0.045 + random(`sl-v-${i}`) * 0.05)) % 1;
+    const r0 = R * (0.35 + ph * 0.6), r1 = r0 + R * (0.06 + amount * 0.2);
+    return <line key={i} x1={cx + Math.cos(a) * r0} y1={cy + Math.sin(a) * r0} x2={cx + Math.cos(a) * r1} y2={cy + Math.sin(a) * r1}
+      stroke="#fff" strokeWidth={2 + random(`sl-w-${i}`) * 4} opacity={amount * 0.5 * (0.3 + ph)} strokeLinecap="round" />;
+  });
+  return <AbsoluteFill><svg width={width} height={height}>{lines}</svg></AbsoluteFill>;
+};
 
-export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension}) => {
+type OverlayProps = {frame: number; labels: Label[]; captions: Caption[]; flash: number; tension: number; streaks?: number};
+
+export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash, tension, streaks = 0}) => {
   const {fps, width, height} = useVideoConfig();
   const label = [...labels].reverse().find((l) => frame >= l.frame) ?? labels[0];
   const cap = captions.find((c) => frame >= c.frame && frame < c.end);
@@ -73,6 +88,7 @@ export const Overlay: React.FC<OverlayProps> = ({frame, labels, captions, flash,
           </div>
         )}
       </div>
+      <SpeedLines frame={frame} amount={streaks} />
       <AbsoluteFill style={{background: '#fff', opacity: flash}} />
     </AbsoluteFill>
   );

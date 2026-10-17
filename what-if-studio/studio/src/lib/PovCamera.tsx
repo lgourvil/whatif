@@ -18,6 +18,12 @@ export type PovSpec = {
   impacts: {frame: number; amp: number}[];
   /** keyed dolly-zoom strength (0 = off, 1 = full compensation) */
   dolly?: Key[];
+  /** keyed extra altitude (metres) added to the eye: lets the rig float/fall without touching the ground path */
+  alt?: Key[];
+  /** keyed extra camera roll (radians): tumbling, banking */
+  roll?: Key[];
+  /** 0..1: suppress walk bob/footsteps (weightlessness, free fall) */
+  fly?: Key[];
 };
 
 export type Pose = {
@@ -50,8 +56,9 @@ export const computePose = (
   const phase = u * len / 0.75 * Math.PI; // one step per 0.75 m
   const tension = smooth(frame, s.tension);
 
-  const moving = Math.min(1, speed / 1.2);
-  const run = Math.min(1, speed / 7);
+  const fly = s.fly ? smooth(frame, s.fly) : 0;
+  const moving = Math.min(1, speed / 1.2) * (1 - fly);
+  const run = Math.min(1, speed / 7) * (1 - fly);
   const bobAmp = moving * (0.045 + run * 0.1);
   const bob = Math.abs(Math.sin(phase)) * bobAmp;
   const sway = Math.sin(phase) * bobAmp * 0.6;
@@ -72,7 +79,7 @@ export const computePose = (
 
   const yaw = smooth(frame, s.yaw) + nYaw + sway * 0.02;
   const pitch = smooth(frame, s.pitch) + nPit + shock * 0.09;
-  const roll = roll0 + nRol + shock * 0.05;
+  const roll = roll0 + nRol + shock * 0.05 + (s.roll ? smooth(frame, s.roll) : 0);
   const fov = smooth(frame, s.fov);
 
   const fwd = new THREE.Vector3(Math.sin(yaw), 0, -Math.cos(yaw));
@@ -81,7 +88,7 @@ export const computePose = (
   const right = new THREE.Vector3(-fwd.z, 0, fwd.x);
 
   const pos = new THREE.Vector3(p.x, 0, p.z).addScaledVector(fwd, dz).addScaledVector(right, sway);
-  pos.y = ground(pos.x, pos.z) + s.eye + bob + shock * 0.12;
+  pos.y = ground(pos.x, pos.z) + s.eye + bob + shock * 0.12 + (s.alt ? smooth(frame, s.alt) : 0);
 
   const dir = new THREE.Vector3(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), -Math.cos(yaw) * Math.cos(pitch));
   const m = new THREE.Matrix4().lookAt(pos, pos.clone().add(dir), new THREE.Vector3(0, 1, 0));
