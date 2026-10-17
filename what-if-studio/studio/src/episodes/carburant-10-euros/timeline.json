@@ -1,0 +1,469 @@
+{
+ "slug": "carburant-10-euros",
+ "fps": 30,
+ "durationInFrames": 2460,
+ "hookEnd": 75,
+ "loopFlash": 2385,
+ "hook": {
+  "top": "ET SI…",
+  "question": "le litre d'essence passait de 1 € à 10 € ?",
+  "highlights": [
+   "1 €",
+   "10 €"
+  ],
+  "band": "ET SI le litre passait à 10 € ?"
+ },
+ "prices": [
+  [
+   0,
+   1.0
+  ],
+  [
+   240,
+   1.5
+  ],
+  [
+   390,
+   2.0
+  ],
+  [
+   540,
+   2.5
+  ],
+  [
+   690,
+   3.0
+  ],
+  [
+   840,
+   3.5
+  ],
+  [
+   990,
+   4.0
+  ],
+  [
+   1140,
+   4.5
+  ],
+  [
+   1290,
+   5.0
+  ],
+  [
+   1420,
+   5.5
+  ],
+  [
+   1540,
+   6.0
+  ],
+  [
+   1650,
+   6.5
+  ],
+  [
+   1750,
+   7.0
+  ],
+  [
+   1840,
+   7.5
+  ],
+  [
+   1920,
+   8.0
+  ],
+  [
+   1990,
+   8.5
+  ],
+  [
+   2055,
+   9.0
+  ],
+  [
+   2115,
+   9.5
+  ],
+  [
+   2175,
+   10.0
+  ]
+ ],
+ "relances": [
+  {
+   "frame": 95,
+   "end": 225,
+   "text": "Tout le monde fait le plein.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 255,
+   "end": 380,
+   "text": "Octobre 2018 : 1,53 €",
+   "role": "FAIT",
+   "source": "Ministère de la Transition écologique (gazole, mi-oct. 2018)"
+  },
+  {
+   "frame": 405,
+   "end": 530,
+   "text": "Mars 2022 : record à 2,14 €",
+   "role": "FAIT",
+   "source": "Prix moyen gazole, 11 mars 2022"
+  },
+  {
+   "frame": 555,
+   "end": 680,
+   "text": "Plus cher que le record de 2026",
+   "role": "FAIT",
+   "source": "Gazole ≈ 2,40 € en 2026 (AFP, guerre au Moyen-Orient)"
+  },
+  {
+   "frame": 705,
+   "end": 830,
+   "text": "Le plein ? 150 €.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 855,
+   "end": 985,
+   "text": "Le gilet jaune ressort du coffre.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 1005,
+   "end": 1130,
+   "text": "2018 : 300 000 sur les ronds-points",
+   "role": "FAIT",
+   "source": "17 nov. 2018 : 2 500 blocages, ≥ 300 000 gilets jaunes"
+  },
+  {
+   "frame": 1155,
+   "end": 1280,
+   "text": "Plus de la moitié ? Des taxes.",
+   "role": "FAIT",
+   "source": "Taxes ≈ 50–60 % du prix à la pompe (TICPE + TVA)"
+  },
+  {
+   "frame": 1305,
+   "end": 1410,
+   "text": "Les stations sont à sec.",
+   "role": "FAIT",
+   "source": "Comme en oct. 2022 (grève des raffineries)"
+  },
+  {
+   "frame": 1435,
+   "end": 1530,
+   "text": "Plus personne ne roule.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 1555,
+   "end": 1640,
+   "text": "Les sirènes ne s'arrêtent plus.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 1665,
+   "end": 1740,
+   "text": "Tu ne vois plus rien.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 1765,
+   "end": 1835,
+   "text": "Le plein ? 350 €.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 1935,
+   "end": 2045,
+   "text": "Ça ne s'arrête plus.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 2125,
+   "end": 2172,
+   "text": "Puis le litre a atteint 10 €.",
+   "role": "RELANCE_FORTE"
+  },
+  {
+   "frame": 2190,
+   "end": 2300,
+   "text": "C'EST LA GUERRE.",
+   "role": "CLIMAX"
+  },
+  {
+   "frame": 2305,
+   "end": 2372,
+   "text": "Un plein = 500 €.",
+   "role": "RELANCE"
+  },
+  {
+   "frame": 2398,
+   "end": 2442,
+   "text": "…et tout a recommencé.",
+   "role": "LOOP"
+  }
+ ],
+ "movements": [
+  {
+   "name": "M1 Hook — le pistolet à la main, totem à 1,00 €",
+   "start": 0,
+   "end": 150
+  },
+  {
+   "name": "M2 Le plein — regard vers l'écran de la pompe",
+   "start": 150,
+   "end": 540
+  },
+  {
+   "name": "M3 La file — retour au totem, la route se bouche",
+   "start": 540,
+   "end": 840
+  },
+  {
+   "name": "M4 Le gilet jaune — on l'enfile",
+   "start": 840,
+   "end": 990
+  },
+  {
+   "name": "M5 Le rond-point — marche vers les gilets jaunes",
+   "start": 990,
+   "end": 1420
+  },
+  {
+   "name": "M6 La nuit tombe — sirènes et lacrymos",
+   "start": 1420,
+   "end": 1840
+  },
+  {
+   "name": "M7 Le compteur s'emballe — le doigt pointe le totem",
+   "start": 1840,
+   "end": 2175
+  },
+  {
+   "name": "M8 10 € — la guerre, puis la boucle",
+   "start": 2175,
+   "end": 2460
+  }
+ ],
+ "interactions": [
+  {
+   "frame": 60,
+   "type": "nozzle_in",
+   "hand": "right"
+  },
+  {
+   "frame": 150,
+   "type": "squeeze",
+   "hand": "right"
+  },
+  {
+   "frame": 300,
+   "type": "touch_pump",
+   "hand": "left"
+  },
+  {
+   "frame": 700,
+   "type": "release_nozzle",
+   "hand": "right"
+  },
+  {
+   "frame": 790,
+   "type": "grab_vest",
+   "hand": "both"
+  },
+  {
+   "frame": 1095,
+   "type": "point_crowd",
+   "hand": "right"
+  },
+  {
+   "frame": 1680,
+   "type": "shield_eyes",
+   "hand": "left"
+  },
+  {
+   "frame": 1965,
+   "type": "point_totem",
+   "hand": "right"
+  },
+  {
+   "frame": 2180,
+   "type": "brace",
+   "hand": "both"
+  }
+ ],
+ "sfx": [
+  {
+   "frame": 0,
+   "type": "hit"
+  },
+  {
+   "frame": 62,
+   "type": "nozzle_click"
+  },
+  {
+   "frame": 150,
+   "type": "pump_start"
+  },
+  {
+   "frame": 700,
+   "type": "nozzle_click"
+  },
+  {
+   "frame": 600,
+   "type": "horns"
+  },
+  {
+   "frame": 760,
+   "type": "horns"
+  },
+  {
+   "frame": 820,
+   "type": "zip"
+  },
+  {
+   "frame": 1000,
+   "type": "crowd_cheer"
+  },
+  {
+   "frame": 1290,
+   "type": "pump_stop"
+  },
+  {
+   "frame": 1500,
+   "type": "siren"
+  },
+  {
+   "frame": 1620,
+   "type": "gas_pop"
+  },
+  {
+   "frame": 1650,
+   "type": "gas_pop"
+  },
+  {
+   "frame": 1690,
+   "type": "gas_pop"
+  },
+  {
+   "frame": 1700,
+   "type": "cough"
+  },
+  {
+   "frame": 1760,
+   "type": "whoosh_fire"
+  },
+  {
+   "frame": 2000,
+   "type": "boom_small"
+  },
+  {
+   "frame": 2110,
+   "type": "riser"
+  },
+  {
+   "frame": 2175,
+   "type": "explosion"
+  },
+  {
+   "frame": 2200,
+   "type": "glass"
+  },
+  {
+   "frame": 2330,
+   "type": "riser"
+  },
+  {
+   "frame": 2385,
+   "type": "hit"
+  }
+ ],
+ "tension": [
+  [
+   0,
+   0.05
+  ],
+  [
+   240,
+   0.08
+  ],
+  [
+   540,
+   0.2
+  ],
+  [
+   840,
+   0.35
+  ],
+  [
+   990,
+   0.45
+  ],
+  [
+   1290,
+   0.55
+  ],
+  [
+   1540,
+   0.7
+  ],
+  [
+   1680,
+   0.82
+  ],
+  [
+   1920,
+   0.85
+  ],
+  [
+   2115,
+   0.92
+  ],
+  [
+   2175,
+   1.0
+  ],
+  [
+   2330,
+   1.0
+  ],
+  [
+   2385,
+   0.05
+  ],
+  [
+   2460,
+   0.05
+  ]
+ ],
+ "impacts": [
+  {
+   "frame": 0,
+   "amp": 0.25
+  },
+  {
+   "frame": 1620,
+   "amp": 0.35
+  },
+  {
+   "frame": 1690,
+   "amp": 0.4
+  },
+  {
+   "frame": 2000,
+   "amp": 0.6
+  },
+  {
+   "frame": 2175,
+   "amp": 1.6
+  },
+  {
+   "frame": 2240,
+   "amp": 0.5
+  }
+ ]
+}
