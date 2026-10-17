@@ -4,5 +4,6 @@
   {"date": "2026-10-14", "slug": "guadeloupe-empire", "title": "What if Guadeloupe built an empire?", "theme": "society / alternate history", "branch": "episode/2026-10-14-guadeloupe-empire"},
   {"date": "2026-10-14", "slug": "telekinesis", "title": "What if you practiced telekinesis every day?", "theme": "human body / superpowers", "branch": "episode/2026-10-14-telekinesis"},
   {"date": "2026-10-15", "slug": "ocean-drains", "title": "What if the ocean left… and came back?", "theme": "nature / space", "branch": "claude/brave-clarke-si7bps", "note": "DUPLICATE of the two ocean episodes above — do not repeat"},
-  {"date": "2026-10-15", "slug": "shadows-noon", "title": "What if every shadow came alive at noon?", "theme": "horreur légère / société", "branch": "claude/brave-clarke-si7bps", "timeScale": "clock 12:00 → 23:59 → 12:00", "durationSeconds": 66.7}
+  {"date": "2026-10-15", "slug": "shadows-noon", "title": "What if every shadow came alive at noon?", "theme": "horreur légère / société", "branch": "claude/brave-clarke-si7bps", "timeScale": "clock 12:00 → 23:59 → 12:00", "durationSeconds": 66.7},
+  {"date": "2026-10-17", "slug": "carburant-10-euros", "title": "Et si le litre d'essence passait de 1 € à 10 € ?", "whatIf": "ET SI… le litre d'essence passait de 1 € à 10 € ?", "language": "fr", "theme": "société / économie (gilets jaunes, prix du carburant)", "timeScale": "prix du litre 1,00 € → 10,00 € par paliers de 0,50 € (19 paliers, qui accélèrent)", "durationSeconds": 82.0, "branch": "claude/funny-newton-fp6866"}
 ]

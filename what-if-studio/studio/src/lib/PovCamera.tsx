@@ -90,16 +90,42 @@ export const computePose = (
   return {pos, quat, fov, speed, phase, yaw, shock, heading: fwd};
 };
 
-export const PovCamera: React.FC<{pose: Pose}> = ({pose}) => {
+export const PovCamera: React.FC<{pose: Pose; near?: number; far?: number}> = ({pose, near = 0.1, far = 2500}) => {
   const camera = useThree((st) => st.camera) as THREE.PerspectiveCamera;
   useLayoutEffect(() => {
     camera.position.copy(pose.pos);
     camera.quaternion.copy(pose.quat);
     camera.fov = pose.fov;
-    camera.near = 0.1;
-    camera.far = 2500;
+    camera.near = near;
+    camera.far = far;
     camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
   });
   return null;
+};
+
+/**
+ * Head orientation as felt by the arms: an exponentially weighted average of past head
+ * orientations (closed form over the last `n` frames) — hands follow the gaze with inertia.
+ */
+export const laggedQuat = (frame: number, fps: number, s: PovSpec, ground: (x: number, z: number) => number, n = 6, k = 0.55) => {
+  const q = computePose(frame, fps, s, ground).quat.clone();
+  let w = 1;
+  for (let i = 1; i <= n; i++) {
+    w *= k;
+    const qi = computePose(frame - i, fps, s, ground).quat;
+    q.slerp(qi, w / (1 + w));
+  }
+  return q;
+};
+
+/** Sensor-like auto exposure: average of the target exposure over the last `n` frames. */
+export const adaptExposure = (frame: number, target: (f: number) => number, n = 18) => {
+  let a = 0, wsum = 0;
+  for (let i = 0; i <= n; i++) {
+    const w = Math.exp(-i / (n * 0.45));
+    a += target(frame - i) * w;
+    wsum += w;
+  }
+  return a / wsum;
 };
