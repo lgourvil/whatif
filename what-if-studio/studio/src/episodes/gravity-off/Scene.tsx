@@ -253,11 +253,11 @@ export const GravityOff: React.FC = () => {
             tumble={pipTumble} />
           {frame < 1791 || frame > 1815 ? <Outlined geometry={GEO.cup} color="#f4efe6" position={[cupPos.x, cupPos.y, cupPos.z]} rotation={[frame * 0.02 * clamp01(cupRise), frame * 0.03 * clamp01(cupRise), 0]} scale={0.85} thickness={0.12} shadow={false} /> : null}
 
-          <Particles frame={frame} seed="dust" count={1400} intensity={(1 - night) * 0.6 * (1 - clamp01(alt / 200))} center={camCenter} box={[60, 14, 60]} velocity={[0.1, 0.02, -0.05]} size={0.05} color={pal.horizon.clone().lerp(C('#fff'), 0.5)} opacity={0.5} wobble={0.3} />
-          <Particles frame={frame} seed="motes" count={3600} intensity={smoothstep(120, 400, frame) * (frame < 1520 ? 1 : 0)} center={camCenter} box={[90, 50, 90]} velocity={[0.01, 0.045, 0.01]} size={0.09} color={pal.accent.clone().lerp(C('#fff'), 0.5)} opacity={0.75} wobble={0.8} />
-          <Particles frame={frame} seed="drops" count={3200} intensity={smoothstep(200, 500, frame) * (frame < 1700 ? 1 : 0)} center={new THREE.Vector3(0, 220, -85)} box={[240, 520, 70]} velocity={[0, 0.16, 0]} size={0.5} color="#bfe4ff" opacity={0.85} wobble={1.2} />
-          <Particles frame={frame} seed="fall" count={2400} intensity={streaks} center={camCenter} box={[40, 70, 40]} velocity={[0, 1.1, 0]} size={0.08} color="#ffffff" opacity={0.7} />
-          <Particles frame={frame} seed="spray" count={3000} intensity={spray} center={new THREE.Vector3(0, 18, -40)} box={[110, 40, 130]} velocity={[0, 0.5, 0]} size={0.35} color="#ffffff" opacity={0.8} wobble={0.8} />
+          <Particles frame={frame} seed="dust" count={700} intensity={(1 - night) * 0.6 * (1 - clamp01(alt / 200))} center={camCenter} box={[60, 14, 60]} velocity={[0.1, 0.02, -0.05]} size={0.05} color={pal.horizon.clone().lerp(C('#fff'), 0.5)} opacity={0.5} wobble={0.3} />
+          <Particles frame={frame} seed="motes" count={1800} intensity={smoothstep(120, 400, frame) * (frame < 1520 ? 1 : 0)} center={camCenter} box={[90, 50, 90]} velocity={[0.01, 0.045, 0.01]} size={0.09} color={pal.accent.clone().lerp(C('#fff'), 0.5)} opacity={0.75} wobble={0.8} />
+          <Particles frame={frame} seed="drops" count={1500} intensity={smoothstep(200, 500, frame) * (frame < 1700 ? 1 : 0)} center={new THREE.Vector3(0, 220, -85)} box={[240, 520, 70]} velocity={[0, 0.16, 0]} size={0.5} color="#bfe4ff" opacity={0.85} wobble={1.2} />
+          <Particles frame={frame} seed="fall" count={1200} intensity={streaks} center={camCenter} box={[40, 70, 40]} velocity={[0, 1.1, 0]} size={0.08} color="#ffffff" opacity={0.7} />
+          <Particles frame={frame} seed="spray" count={1500} intensity={spray} center={new THREE.Vector3(0, 18, -40)} box={[110, 40, 130]} velocity={[0, 0.5, 0]} size={0.35} color="#ffffff" opacity={0.8} wobble={0.8} />
 
           <PovHands position={pose.pos} quaternion={pose.quat} glove={pal.ground.clone().multiplyScalar(0.7)} sleeve={pal.accent.clone().multiplyScalar(0.7)} raise={handsRaise}
             swing={Math.sin(frame * 0.15) * flyAmt * 1.3} frame={frame} />
